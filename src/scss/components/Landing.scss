@@ -1,0 +1,42 @@
+.background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Fondo suave y profesional */
+    font-family: 'Poppins', sans-serif; /* Cambia la fuente a Poppins para una apariencia moderna y legible */
+    text-align: center;
+    color: #333; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.3rem; /* Tamaño del encabezado */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+p {
+    font-size: 1.25rem; /* Tamaño del párrafo */
+    margin-bottom: 2rem;
+}
+button {
+    background-color: #bdcde7; /* Verde profesional */
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    &:hover {
+      background-color: #b2caef; /* Más oscuro al pasar el ratón */
+      transform: scale(1.05); /* Efecto sutil de agrandamiento */
+    }
+    &:active {
+      background-color: #6677db; /* Color más oscuro al hacer clic */
+      transform: scale(0.98); /* Efecto de pulsación */
+    }
+}
