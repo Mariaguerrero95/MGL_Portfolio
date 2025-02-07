@@ -1,4 +1,4 @@
-import '../scss/components/LearningPath.scss'; 
+import "../scss/components/skills.scss";
 import React from "react";
 
 const LearningPath = () => {

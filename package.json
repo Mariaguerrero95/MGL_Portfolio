@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "framer-motion": "^12.4.1",
     "i18next": "^24.2.2",
     "node-sass": "^9.0.0",
     "prop-types": "^15.8.1",

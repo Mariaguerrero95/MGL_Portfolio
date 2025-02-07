@@ -13,7 +13,7 @@ const Hero = () => {
                 <p>Passionate about creating beautiful, responsive, and user-friendly web applications.</p>
                 <div className="buttons">
                     <a href="#contact" className="btn">{t("contact")}</a>
-                    <a href="./public/CV_María_Guerrero.pdf" download className="btn btn-secondary">{t("download")}</a>
+                    <a href="./public/CVMaría.pdf" download className="btn btn-secondary">{t("download")}</a>
                 </div>
                 {/* Agregamos el contenedor para los íconos debajo de los botones */}
                 <div className="social-icons">

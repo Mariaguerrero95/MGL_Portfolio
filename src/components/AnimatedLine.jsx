@@ -1,15 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const AnimatedLine = () => {
     return (
-        <div className="animated-line">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>React</span>
-        <span>Node.js</span>
-        <span>Tailwind</span>
-        </div>
+        <motion.div
+        className="animated-line"
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ duration: 1 }}
+        />
     );
 };
 
