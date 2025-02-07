@@ -1,27 +1,26 @@
 import "../scss/components/skills.scss";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import AnimatedLine from "./AnimatedLine";
+
 
 
 const skills = [
     { name: "HTML", logo: "./logos/HTMLicon.png" },
     { name: "CSS", logo: "./logos/CSSicon.png" },
-    { name: "TypeScript", logo: "./logos/TYPESCRIPTicon.png" },
+    { name: "TypeScript", logo: "./logos/TYPESCRIPTicon.svg" },
     { name: "JavaScript", logo: "./logos/JAVASCRIPTicon.png" },
-    { name: "React", logo: "./logos/REACTicon.png" },
+    { name: "React", logo: "./logos/REACTicon.webp" },
     { name: "Angular", logo: "./logos/ANGULARicon.png" },
     { name: "MySQL", logo: "./logos/MYSQLicon.png" },
     { name: "Node.js", logo: "./logos/NODEJSicon.png" },
     { name: "Git", logo: "./logos/GITicon.png" },
-    { name: "GitHub", logo: "./logos/GITHUBicon.png" },
+    { name: "GitHub", logo: "./logos/GITHUBicon.svg" },
     { name: "Bootstrap", logo: "./logos/BOOTSTRAPicon.png" },
     { name: "Tailwind", logo: "./logos/TAILWINDicon.png" },
     { name: "Figma", logo: "./logos/FIGMAicon.png" },
     { name: "Postman", logo: "./logos/POSTMANicon.png" },
     { name: "ExpressJS", logo: "./logos/EXPRESSicon.png" },
 ];
-// Duplicamos los elementos para que el carrusel sea infinito
+// Duplico los elementos para que el carrusel sea infinito
 const repeatedSkills = [...skills, ...skills];
 
 const Skills = () => {
