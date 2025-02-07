@@ -1,0 +1,80 @@
+@import '../core/variables';
+.header {
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;               
+    padding: 20px 50px;                
+    background-color: $background-color ;            
+    color: white;                     
+    font-family: 'Arial', sans-serif;   
+}
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color:$primary-color;
+}
+nav ul {
+    display: flex;                    
+    list-style: none;                  
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    margin-left: 20px;                
+}
+nav ul li a {
+    color: white;                     
+    text-decoration: none;            
+    font-size: 1.1rem;
+    transition: color 0.3s;           
+}  
+nav ul li a:hover {
+    color: #ff7f50;                    
+}    
+.social-icons {
+    display: flex;                    
+    gap: 15px;                         
+}
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+.social-icons a:hover {
+    color: #ff7f50;                    
+}
+.language-selector {
+    background-color: transparent;    
+    border: 1px solid white;          
+    color: white;                     
+    padding: 5px 10px;                 
+    font-size: 1rem;
+    border-radius: 5px;                
+    cursor: pointer;
+}
+.language-selector:focus {
+    outline: none;                     
+    border-color: #ff7f50;             
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;           
+        text-align: center;              
+    }
+    nav ul {
+        flex-direction: column;           
+        margin-top: 20px;
+    }
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;              
+    }
+    .social-icons {
+        margin-top: 20px;
+        gap: 10px;
+    }
+    .language-selector {
+        margin-top: 10px;
+    }
+}

@@ -1,12 +1,12 @@
 import "../scss/components/Footer.scss";
+import React from "react";
 
-function Footer() {
+const Footer = () => {
     return (
         <footer className="footer">
-            <p>MARÍA GUERRERO LOBO © 2024</p>
+            <p>Made with ♥ by María Guerrero Lobo © 2025</p>
         </footer>
-    )
-}
-
+    );
+};
 
 export default Footer;

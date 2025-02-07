@@ -1,0 +1,120 @@
+@import '../core/variables';
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    font-family: 'Arial', sans-serif; 
+}
+.hero-image{ 
+    width: 300px;            
+    height: 300px;       
+    border-radius: 50%; 
+    object-fit: cover;      
+    border: 5px solid #ec4899;    
+}
+.hero-text h2 {
+    font-size: 2.5rem;
+    color: #56e39f;
+}
+.hero-text p {
+    padding-top: 23px;
+    padding-bottom: 23px;
+}
+.btn-secondary {
+    background-color: #ff69b4;
+}
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    background-color: #56e39f;
+    color: #000;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.btn-secondary {
+    background-color: #ff69b4;
+}
+.btn:hover {
+    background-color: #45b18e; 
+}
+.btn-secondary:hover {
+    background-color: #ff4f9e; 
+}
+.social-icons {
+    display: flex;
+    gap: 15px;              
+    margin-top: 20px;      
+    justify-content: center; 
+}
+.social-icons a {
+    padding-top:15px;
+    font-size: 2rem;       
+    color: #b2adad;            
+    transition: color 0.3s;
+}
+.social-icons a:hover {
+    color: #ff4f9e;        
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 25px;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .buttons {
+        gap: 15px;
+    }
+    .hero-image {
+        height: 250px;
+        width: 250px;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    .social-icons {
+        flex-direction: row; 
+        justify-content: center;
+        gap: 20px;           
+    }
+}
+@media (min-width: 1024px) {
+    .hero {
+        margin-left: 30px;
+        font-size: 25px;
+        margin-top: 80px;
+        padding: 20px;
+    }
+    .hero-text h2 {
+        margin-left: 30px;
+        font-size: 3.5rem;
+        color: #56e39f;
+    }
+    .hero-text p {
+        margin-left: 30px;
+        font-size: 2rem;
+        padding-top: 20px;
+        padding-right: 30px;
+    }
+    .buttons {
+        margin-left: 30px;
+        gap: 20px;
+    }
+    .social-icons a {
+        padding-top: 30px;
+        font-size: 3.5rem;
+    }
+    .social-icons {
+        flex-direction: row; 
+        justify-content: left;
+        gap: 35px; 
+        margin-left: 30px;          
+    }
+}

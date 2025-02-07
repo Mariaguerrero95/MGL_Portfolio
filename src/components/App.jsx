@@ -1,21 +1,28 @@
 import "../scss/App.scss";
-import Landing from "./Landing.jsx";
-import Main from "./Main.jsx";
-import Footer from "./Footer.jsx";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import LearningPath from "../components/LearningPath";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 
 
 function App() {
     return (
-        <>
-                <Routes>
-                    <Route path="/" element={<Landing />} /> 
-                    <Route path="/portfolio" element={<Main />} />
-                </Routes> 
+        <>  
+            <Header />
+            <Hero />
+            <Skills />
+            <Projects />
+            <LearningPath />
+            <Contact />
+            <Footer />
         </>
 );
 }
 
-export default App
+export default App;
 

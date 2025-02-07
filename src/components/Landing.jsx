@@ -7,7 +7,7 @@ function Landing() {
     return (
     <div className="background"> 
         <h1>Welcome to my portfolio</h1>
-        <p>Discover my studies and skills</p>
+        <p>Discover my skills</p>
         <Link to="/portfolio">
             <button>Explore Portfolio</button>
         </Link>

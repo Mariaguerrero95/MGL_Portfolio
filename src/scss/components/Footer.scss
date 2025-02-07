@@ -1,12 +1,8 @@
+@import '../core/variables';
 .footer {
     text-align: center;
-    background-color: #c3cfe2;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    color: #333; /* Color de texto profesional */
+    color: $text-color;
+    color: $font-family; /* Color de texto profesional */
 }
 .footer p {
     font-size: 0.9rem; /* Tamaño del texto */
