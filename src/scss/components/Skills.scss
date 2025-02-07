@@ -3,7 +3,7 @@
         font-family: $font-family;
         text-align: center;
         padding: 40px 0;
-        color: white;
+        color: $font-color;
         position: relative; /* Para contener el efecto nublado */
         
         h2 {
@@ -32,7 +32,7 @@
         height: 80px; /* CUADRADO */
         padding: 80px;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(230, 20, 209, 0.1);
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     
         img {

@@ -11,52 +11,52 @@
     height: 300px;       
     border-radius: 50%; 
     object-fit: cover;      
-    border: 5px solid #ec4899;    
+    border: 5px solid $primary-color;    
 }
 .hero-text h2 {
-    font-size: 2.5rem;
-    color: #56e39f;
+    font-size: 2rem;
+    color: $font-color;
 }
 .hero-text p {
+    font-size: 1rem;
     padding-top: 23px;
     padding-bottom: 23px;
+    color: $font-color;
 }
 .btn-secondary {
-    background-color: #ff69b4;
+    background-color: $primary-color;
 }
 .btn {
     padding: 10px 20px;
     margin: 10px;
     text-decoration: none;
-    background-color: #56e39f;
-    color: #000;
+    background-color: $background-color;
+    color: $font-color;
     border-radius: 5px;
-    font-weight: bold;
     transition: background-color 0.3s;
 }
 .btn-secondary {
-    background-color: #ff69b4;
+    background-color: $primary-color;
 }
 .btn:hover {
-    background-color: #45b18e; 
+    background-color: $primary-color; 
 }
 .btn-secondary:hover {
-    background-color: #ff4f9e; 
+    background-color: $background-color; 
 }
 .social-icons {
     display: flex;
-    gap: 15px;              
-    margin-top: 20px;      
+    margin-top: 20px;   
     justify-content: center; 
 }
 .social-icons a {
     padding-top:15px;
     font-size: 2rem;       
-    color: #b2adad;            
+    color: $secondary-color;            
     transition: color 0.3s;
 }
 .social-icons a:hover {
-    color: #ff4f9e;        
+    color: $primary-color;        
 }
 
 @media (max-width: 768px) {
@@ -87,19 +87,18 @@
 }
 @media (min-width: 1024px) {
     .hero {
-        margin-left: 30px;
+        margin-left: 40px;
         font-size: 25px;
         margin-top: 80px;
         padding: 20px;
     }
     .hero-text h2 {
         margin-left: 30px;
-        font-size: 3.5rem;
-        color: #56e39f;
+        font-size: 2.5rem;
     }
     .hero-text p {
         margin-left: 30px;
-        font-size: 2rem;
+        font-size: 1rem;
         padding-top: 20px;
         padding-right: 30px;
     }

@@ -1,1 +1,173 @@
 @import '../core/variables';
+.projects {
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    display: flex;
+    position: relative;
+    font-family: $font-family;
+    
+        h2 {
+        color: $font-color;
+        font-size: 2rem;
+        margin-bottom: 10px;
+        }
+    
+        p {
+        font-size: 1.2rem;
+        margin-top: 25px;
+        margin-bottom: 30px;
+        }
+    
+        &::before,
+        &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, transparent, $primary-color, transparent);
+        position: absolute;
+        left: 0;
+        }
+    
+        &::before {
+        top: 0;
+        }
+    
+        &::after {
+        bottom: 0;
+        }
+}
+    
+    .project-card {
+        background: linear-gradient(135deg, #2b1c29, #252540);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+        
+        &:hover {
+        transform: rotateY(15deg);
+        }
+    
+        h3 {
+        color: #b983ff;
+        font-size: 1.5rem;
+        }
+    
+        .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin: 15px 0;
+    
+        .tech {
+            background: #6a00f4;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        }
+    
+        .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+    
+        .btn {
+            background: linear-gradient(90deg, #6a00f4, #d400ff);
+            padding: 10px 20px;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+    
+            &.demo {
+            background: linear-gradient(90deg, #00ff87, #d400ff);
+            }
+    
+            &:hover {
+            filter: brightness(1.2);
+            }
+        }
+        }
+}
+    
+    #projects .view-more {
+        display: block;
+        margin: 40px auto;
+        padding: 12px 25px;
+        border: 2px solid #6a00f4;
+        border-radius: 25px;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+        width: fit-content;
+        transition: all 0.3s;
+    
+        &:hover {
+        background: #6a00f4;
+        }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 90%;
+    }
+}
+@media (max-width: 975px) {
+    .projects {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 90%;
+    }
+}
+@media (max-width: 979px) {
+    .projects {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 90%;
+    }
+}
+@media (max-width: 1023px) {
+    .projects {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 90%;
+    }
+}
+@media (min-width: 1024px) {
+    .projects {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 90%;
+    }
+}

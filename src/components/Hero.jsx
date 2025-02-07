@@ -10,7 +10,9 @@ const Hero = () => {
         <section className="hero">
             <div className="hero-text">
                 <h2>{t("hello")}, I'm a <span>{t("developer")}</span></h2>
-                <p>Passionate about creating beautiful, responsive, and user-friendly web applications.</p>
+                <p>I am an enthusiastic and detail-oriented coder with a keen interest in front-end development and web design. I am
+passionate about creating user-friendly, responsive websites and improving user experiences. I have knowledge in HTML, CSS, Javascript, React and Angular as well as back-end
+solutions, such as mySQL and expressJS. I am a fast learner, always eager to stay up to date with the latest industry trends and technologies.</p>
                 <div className="buttons">
                     <a href="#contact" className="btn">{t("contact")}</a>
                     <a href="./public/CVMaría.pdf" download className="btn btn-secondary">{t("download")}</a>

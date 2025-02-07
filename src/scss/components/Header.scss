@@ -3,15 +3,14 @@
     display: flex;
     justify-content: space-between;   
     align-items: center;               
-    padding: 20px 50px;                
-    background-color: $background-color ;            
-    color: white;                     
+    padding: 25px 50px;                
+    background-color: $background-secondary-color;                               
     font-family: 'Arial', sans-serif;   
 }
 .header h1 {
     font-size: 2rem;
     margin: 0;
-    color:$primary-color;
+    color: $background-color;
 }
 nav ul {
     display: flex;                    
@@ -23,30 +22,30 @@ nav ul li {
     margin-left: 20px;                
 }
 nav ul li a {
-    color: white;                     
+    color: $font-color;                     
     text-decoration: none;            
     font-size: 1.1rem;
     transition: color 0.3s;           
 }  
 nav ul li a:hover {
-    color: #ff7f50;                    
+    color: $primary-color;                    
 }    
 .social-icons {
     display: flex;                    
     gap: 15px;                         
 }
 .social-icons a {
-    color: white;
+    color: $font-color;
     font-size: 1.5rem;
     transition: color 0.3s;
 }
 .social-icons a:hover {
-    color: #ff7f50;                    
+    color: $primary-color;                    
 }
 .language-selector {
     background-color: transparent;    
-    border: 1px solid white;          
-    color: white;                     
+    border: 1px solid $font-color;          
+    color: $font-color;                     
     padding: 5px 10px;                 
     font-size: 1rem;
     border-radius: 5px;                
@@ -54,7 +53,7 @@ nav ul li a:hover {
 }
 .language-selector:focus {
     outline: none;                     
-    border-color: #ff7f50;             
+    border-color: $primary-color;             
 }
 
 @media (max-width: 768px) {

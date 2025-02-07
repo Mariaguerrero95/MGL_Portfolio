@@ -12,13 +12,13 @@ const Header = () => {
     
     return (
     <header className="header">
-        <h1>María Guerrero Lobo</h1>
+        <h1>MARÍA GUERRERO LOBO</h1>
         <nav>
             <ul>
-                <li><a href="#skills">{t("skills")}</a></li>  
-                <li><a href="#projects">{t("projects")}</a></li>
-                <li><a href="#learning-path">{t("learningPath")}</a></li>
-                <li><a href="#contact">{t("contact")}</a></li>
+                <li><a href="#skills">{t("SKILLS")}</a></li>  
+                <li><a href="#projects">{t("PROJECTS")}</a></li>
+                <li><a href="#learning-path">{t("LEARNING PATH")}</a></li>
+                <li><a href="#contact">{t("CONTACT")}</a></li>
             </ul>
         </nav>
         <select onChange={(e) => changeLanguage(e.target.value)} className="language-selector" value={i18n.language}>
