@@ -1,1 +1,88 @@
 @import '../core/variables';
+    .learning-path {
+        text-align: left;
+        padding: 40px;
+        margin-top: 20px;
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: $font-color; 
+            margin-bottom: 40px;
+            font-family: $font-family;
+            font-weight: 100;
+            }
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            }
+        
+            .card {
+                background: $background-secondary-color;
+                border-radius: 10px;
+                padding: 20px;
+                width: 350px;
+                color: $font-color;
+                font-family: $font-family;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transition: transform 0.3s ease-in-out;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                    &:hover {
+                        transform: translateY(-10px); 
+                        box-shadow: 0 6px 15px $primary-color; 
+            }
+            .card-header{
+                display: flex;
+                align-items: center;  
+                margin-bottom: 14px;
+            }
+            .card-icon {
+                font-size: 2rem;
+                margin-right: 15px;
+                flex-shrink: 10px;
+            }
+            .card-title {
+                font-weight: 100;
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+            .card-description {
+                font-size: 1rem;
+                color: #d2cfcf;
+                margin: 10px 0;
+                margin-bottom: 15px;
+            }
+            .card-link {
+                text-decoration: none;
+                color: $font-color;
+                margin-top: 10px;
+                display: inline-block;
+                transition: color 0.3s;
+                &:hover {
+                color:  $primary-color; 
+                }
+            }
+            .card-platform {
+                position: absolute;
+                bottom: 15px;
+                right: 20px;
+                font-size: 0.9rem;
+                color: #d2cfcf;
+        }
+        }
+        @media (min-width: 1024px) {
+            .card {
+                width: 450px;
+            }
+        }
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+        
+}}

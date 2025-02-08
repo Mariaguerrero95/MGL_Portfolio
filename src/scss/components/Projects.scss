@@ -10,6 +10,7 @@
         h2 {
         color: $font-color;
         font-size: 2rem;
+        font-weight: 100;
         margin-bottom: 10px;
         }
     
@@ -122,6 +123,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .projects h2{
+        font-size: 1.5rem;
     }
     .project-card {
         width: 90%;

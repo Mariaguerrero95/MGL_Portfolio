@@ -9,6 +9,7 @@
         h2 {
         font-size: 2rem;
         margin-bottom: 20px;
+        font-weight: 100;
         }
         .skills-container {
         overflow: hidden;
@@ -23,7 +24,6 @@
         animation: scroll 13s linear infinite;
         width: calc(200px * 12); /* Asegura un loop continuo */
         }
-    
         .skill-item {
         display: flex;
         flex-direction: column;
@@ -34,30 +34,25 @@
         border-radius: 10px;
         background: rgba(230, 20, 209, 0.1);
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    
         img {
             padding: 5px;
             width: 65px;
             height: 65px;
             
         }
-    
         p {
             font-size: 14px;
             padding-top: 20px;
         }
-    
         &:hover {
             transform: scale(1.2);
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
         }
-    
         .paused .skills-slider {
         animation-play-state: paused;
         }
     }
-    
     @keyframes scroll {
         from {
         transform: translateX(0%);
@@ -66,11 +61,12 @@
         transform: translateX(-50%);
         }
     }
-    
-    /* RESPONSIVE */
     @media (max-width: 768px) {
         .skills-slider {
-        animation: scroll 20s linear infinite;
+            animation: scroll 20s linear infinite;
+        }
+        h2 {
+            font-size: 1.5rem;
         }
     
         .skill-item {

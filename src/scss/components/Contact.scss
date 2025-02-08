@@ -1,1 +1,88 @@
 @import '../core/variables';
+.contact {
+    padding: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 30px;
+    position: relative; 
+}
+.contact::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, $primary-color, transparent);
+    position: absolute;
+    left: 0;
+}
+.contact::before {
+    top: 0;
+}
+.contact h2 {
+    font-family: $font-family;
+    font-weight: 100;
+    font-size: 2rem;
+    color: $font-color;
+    margin-bottom: 25px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+input, textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+input:focus, textarea:focus {
+    border-color: $primary-color;
+    outline: none;
+}
+button {
+    background-color: $secondary-color;
+    color: $font-color;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 100;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; 
+    width: 100px; 
+}
+button:hover {
+    background-color: $primary-color;
+}
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+@media (max-width: 768px) {
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+    form {
+        width: 90%;
+    }
+    @media (max-width: 768px) {
+        button {
+            padding: 8px 16px; 
+            font-size: 1rem; 
+            align-self: center; 
+            width: 70px; 
+        }
+    }
+}
