@@ -9,15 +9,12 @@ const Hero = () => {
     return (
         <section className="hero">
             <div className="hero-text">
-                <h2>{t("hello")}, I'm a <span>{t("developer")}</span></h2>
-                <p>I am an enthusiastic and detail-oriented coder with a keen interest in front-end development and web design. I am
-passionate about creating user-friendly, responsive websites and improving user experiences. I have knowledge in HTML, CSS, Bootstrap, Javascript, React and Angular as well as back-end
-solutions, such as mySQL and expressJS. I am a fast learner, always eager to stay up to date with the latest industry trends and technologies.</p>
+            <h2>{t("hello")}, {t("im")} <span>{t("developer")}</span></h2>
+                <p>{t("hero_description")}</p>
                 <div className="buttons">
                     <a href="#contact" className="btn">{t("contact")}</a>
                     <a href="./public/CVMaría.pdf" download className="btn btn-secondary">{t("download")}</a>
                 </div>
-                {/* Agregamos el contenedor para los íconos debajo de los botones */}
                 <div className="social-icons">
                     <a href="https://github.com/Mariaguerrero95" target="_blank" rel="noopener noreferrer">
                         <FaGithub />

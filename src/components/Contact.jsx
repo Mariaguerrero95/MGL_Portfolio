@@ -1,8 +1,11 @@
-import { useState } from "react";
 import "../scss/components/Contact.scss"; 
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
-  // Estado para manejar los valores del formulario
+    const { t } = useTranslation(); // Importamos useTranslation
+
+    // Estado para manejar los valores del formulario
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -13,8 +16,8 @@ const Contact = () => {
     // Maneja el cambio de los valores de los campos
     const handleChange = (e) => {
         setFormData({
-        ...formData,
-        [e.target.name]: e.target.value,
+            ...formData,
+            [e.target.name]: e.target.value,
         });
     };
 
@@ -24,66 +27,66 @@ const Contact = () => {
 
         // Enviar datos al servidor o Formspree
         const response = await fetch("https://formspree.io/f/xgvozpro", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
         });
 
         // Si la respuesta es exitosa, resetear el formulario
         if (response.ok) {
-        alert("Message sent successfully!");
+            alert(t("message_sent")); // Traducción del mensaje de éxito
 
-        // Resetear formulario
-        setFormData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-        });
+            // Resetear formulario
+            setFormData({
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+            });
         } else {
-        alert("Error sending message");
+            alert(t("message_error")); // Traducción del mensaje de error
         }
     };
 
     return (
         <section id="contact" className="contact">
-        <h2 className="nameContact">Contact</h2>
-        <form onSubmit={handleSubmit}>
-            <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            />
-            <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            />
-            <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            />
-            <textarea
-            name="message"
-            placeholder="Write here..."
-            value={formData.message}
-            onChange={handleChange}
-            required
-            ></textarea>
-            <button type="submit">Send</button>
-        </form>
+            <h2 className="nameContact">{t("contact")}</h2>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder={t("name")}
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder={t("email")}
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="text"
+                    name="subject"
+                    placeholder={t("subject")}
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                />
+                <textarea
+                    name="message"
+                    placeholder={t("message_placeholder")}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                ></textarea>
+                <button type="submit">{t("send")}</button>
+            </form>
         </section>
     );
 };

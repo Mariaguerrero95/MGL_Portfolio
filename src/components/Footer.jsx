@@ -1,10 +1,13 @@
 import "../scss/components/Footer.scss";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+    const { t } = useTranslation(); // Importamos useTranslation
+
     return (
         <footer className="footer">
-            <p>Made with ♥ by María Guerrero Lobo © 2025</p>
+            <p>{t("footer_text")}</p> {/* Traducir el texto del footer */}
         </footer>
     );
 };
