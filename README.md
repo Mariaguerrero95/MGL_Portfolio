@@ -14,7 +14,7 @@ If you'd like to run this project locally, follow these steps:
 
 1. Clone the repository:
 
-git clone https://github.com/Adalab/modulo-3-evaluacion-final-Mariaguerrero95.git
+git clone https://github.com/Mariaguerrero95/MGL_Portfolio?tab=readme-ov-file
 
 2. Install dependencies:
 
