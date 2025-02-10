@@ -2,13 +2,14 @@ import '../scss/components/Hero.scss';
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import fotocv from '/Fotocv.jpg';
 
 const Hero = () => {
     const { t } = useTranslation();
 
     return (
         <section className="hero">
-            <img className="hero-image" src="./public/Fotocv.jpg" alt="María Guerrero Lobo" />
+            <img className="hero-image" src={fotocv} alt="María Guerrero Lobo" />
             <div className="hero-text">
                 <h2>{t("hello")}, {t("im")} <span>{t("developer")}</span></h2>
                 <p>{t("hero_description")}</p>
