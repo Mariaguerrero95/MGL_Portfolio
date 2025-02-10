@@ -1,12 +1,12 @@
-# Website CV of María Guerrero Lobo
+# Portfolio of María Guerrero Lobo
 
 Welcome!
 
-This is my personal web resume where you can explore my professional profile, including my studies, experience, skills, featured projects, and contact information. I created this page as part of my journey as a web developer junior, using technologies as HTML, CSS and React + Vite.
+This is my personal portfolio where you can explore my professional profile, including my studies, experience, skills, featured projects, and contact information. I created this page as part of my journey as a web developer junior, using technologies such as HTML, CSS, Bootstrap and Tailwind, React + Vite.
 
 ## Where can I find the website?
 
-You can find the link to the website in the "About" section of this repository.
+Click here ---> https://mariaguerrero95.github.io/MGL_Portfolio/
 
 ## Installation and Setup
 

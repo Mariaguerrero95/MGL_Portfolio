@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import fotocv from '/Fotocv.jpg';
 
+
 const Hero = () => {
     const { t } = useTranslation();
 
@@ -15,7 +16,7 @@ const Hero = () => {
                 <p>{t("hero_description")}</p>
                 <div className="buttons">
                     <a href="#contact" className="btn">{t("contact")}</a>
-                    <a href="./public/CVMaría.pdf" download className="btn btn-secondary">{t("download")}</a>
+                    <a href="./cv.pdf" download className="btn btn-secondary">{t("download")}</a>
                 </div>
                 <div className="social-icons">
                     <a href="https://github.com/Mariaguerrero95" target="_blank" rel="noopener noreferrer">
