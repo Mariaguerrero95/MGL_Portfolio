@@ -10,8 +10,8 @@ const resources = {
             "LEARNING PATH": "Learning Path",
             "CONTACT": "Contact",
             // ... header
-            hello: "Hello",
-            im: "I'm",
+            hello: "Hi",
+            im: "I'm a",
             developer: "Front-end Developer",
             // ... otras traducciones
             contact: "Contact Me",
@@ -67,7 +67,7 @@ const resources = {
             // ... header
             hello: "Hola",
             im: "Soy",
-            developer: "Desarrollador Front-end",
+            developer: "Desarrolladora Front-end",
               // ... otras traducciones
             contact: "Contáctame",
             "name": "Tu nombre",

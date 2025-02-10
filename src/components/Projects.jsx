@@ -2,6 +2,7 @@ import '../scss/components/Projects.scss';
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+
 const projects = [
     {
         title: "Rick and Morty Character finder",

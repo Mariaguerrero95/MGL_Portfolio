@@ -8,8 +8,9 @@ const Hero = () => {
 
     return (
         <section className="hero">
+            <img className="hero-image" src="./public/Fotocv.jpg" alt="María Guerrero Lobo" />
             <div className="hero-text">
-            <h2>{t("hello")}, {t("im")} <span>{t("developer")}</span></h2>
+                <h2>{t("hello")}, {t("im")} <span>{t("developer")}</span></h2>
                 <p>{t("hero_description")}</p>
                 <div className="buttons">
                     <a href="#contact" className="btn">{t("contact")}</a>
@@ -23,9 +24,6 @@ const Hero = () => {
                         <FaLinkedin />
                     </a>
                 </div>
-            </div>
-            <div>
-                <img className="hero-image" src="./public/Fotocv.jpg" alt="María Guerrero Lobo" />
             </div>
         </section>
     );

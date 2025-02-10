@@ -1,6 +1,6 @@
 import "../scss/components/skills.scss";
 import { useState } from "react";
-
+import { useTranslation } from "react-i18next";
 
 
 const skills = [
@@ -24,12 +24,13 @@ const skills = [
 const repeatedSkills = [...skills, ...skills];
 
 const Skills = () => {
+    const { t } = useTranslation();
     const [paused, setPaused] = useState(false);
     const [activeSkill, setActiveSkill] = useState(null);
 
     return (
         <section id="skills" className="skills">
-        <h2>Skills</h2>
+        <h2>{t("SKILLS")}</h2>
         <div
             className={`skills-container ${paused ? "paused" : ""}`}
             onMouseEnter={() => setPaused(true)}
@@ -44,7 +45,7 @@ const Skills = () => {
                 onMouseLeave={() => setActiveSkill(null)}
                 >
                 <img src={skill.logo} alt={skill.name} />
-                <p>{skill.name}</p>
+                <p>{t(skill.name)}</p>
                 </div>
             ))}
             </div>

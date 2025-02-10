@@ -1,4 +1,5 @@
 @import '../core/variables';
+
 .header {
     display: flex;
     justify-content: space-between;   
@@ -7,41 +8,35 @@
     background-color: $background-secondary-color;                               
     font-family: 'Arial', sans-serif;   
 }
+
 .header h1 {
     font-size: 2rem;
     margin: 0;
     color: $background-color;
 }
+
 nav ul {
     display: flex;                    
     list-style: none;                  
     padding: 0;
     margin: 0;
 }
+
 nav ul li {
     margin-left: 20px;                
 }
+
 nav ul li a {
     color: $font-color;                     
     text-decoration: none;            
     font-size: 1.1rem;
     transition: color 0.3s;           
 }  
+
 nav ul li a:hover {
     color: $primary-color;                    
 }    
-.social-icons {
-    display: flex;                    
-    gap: 15px;                         
-}
-.social-icons a {
-    color: $font-color;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
-.social-icons a:hover {
-    color: $primary-color;                    
-}
+
 .language-selector {
     background-color: transparent;    
     border: 1px solid $font-color;          
@@ -51,29 +46,69 @@ nav ul li a:hover {
     border-radius: 5px;                
     cursor: pointer;
 }
+
 .language-selector:focus {
     outline: none;                     
     border-color: $primary-color;             
 }
 
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;           
-        text-align: center;              
+/* Estilos para dispositivos móviles */
+@media (max-width: 1013px) {
+    .menu-container {
+        position: relative;
     }
-    nav ul {
-        flex-direction: column;           
-        margin-top: 20px;
+
+    .menu-button {
+        background: none !important; 
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        
     }
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;              
+
+    .mobile-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: $secondary-color;
+        border-radius: 5px;
+        box-shadow: 0px 4px 6px ;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        box-shadow: 0px 4px 10px $secondary-color;
     }
-    .social-icons {
-        margin-top: 20px;
-        gap: 10px;
+
+    .mobile-menu ul {
+        list-style: none;
+        padding-right: 39px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
     }
-    .language-selector {
-        margin-top: 10px;
+
+    .mobile-menu ul li {
+        margin-bottom: 10px;
+        width: 100%;
     }
+
+    .mobile-menu ul li a {
+        color: $font-color;
+        text-decoration: none;
+        font-size: 1.1rem;
+        display: block;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul li a:hover {
+        color: $primary-color;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+    }
+
 }

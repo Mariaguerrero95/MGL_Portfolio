@@ -25,7 +25,7 @@ const LearningPath = () => {
     const { t } = useTranslation(); // Habilitar la traducción
 
     return (
-        <section className="learning-path">
+        <section id="learning-path" className="learning-path">
             <h2 className="section-title">{t("learningPathTitle")}</h2> {/* Título traducido */}
             <div className="cards-container">
                 {learningData.map((item, index) => (

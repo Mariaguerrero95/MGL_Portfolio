@@ -40,12 +40,12 @@
 }
     
     .project-card {
-        background: linear-gradient(135deg, #2b1c29, #252540);
+        background: linear-gradient(130deg, $background-secondary-color, $background-secondary-color);
         padding: 20px;
         margin: 20px auto;
         max-width: 500px;
         border-radius: 15px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 4px 10px $primary-color;
         transition: transform 0.3s ease-in-out;
         position: relative;
         
@@ -54,7 +54,8 @@
         }
     
         h3 {
-        color: #b983ff;
+        color: $background-color;
+        font-weight: 100;
         font-size: 1.5rem;
         }
     
@@ -66,7 +67,7 @@
         margin: 15px 0;
     
         .tech {
-            background: #6a00f4;
+            background: rgb(9, 52, 105);
             color: white;
             padding: 5px 10px;
             border-radius: 15px;
@@ -81,7 +82,7 @@
         margin-top: 15px;
     
         .btn {
-            background: linear-gradient(90deg, #6a00f4, #d400ff);
+            background: linear-gradient(90deg, #e579aa, #ec5096);
             padding: 10px 20px;
             color: white;
             border-radius: 20px;
@@ -90,30 +91,13 @@
             transition: 0.3s;
     
             &.demo {
-            background: linear-gradient(90deg, #00ff87, #d400ff);
+            background: linear-gradient(90deg, #e579aa, #ec5096);
             }
     
             &:hover {
             filter: brightness(1.2);
             }
         }
-        }
-}
-    
-    #projects .view-more {
-        display: block;
-        margin: 40px auto;
-        padding: 12px 25px;
-        border: 2px solid #6a00f4;
-        border-radius: 25px;
-        color: white;
-        font-size: 1.2rem;
-        text-align: center;
-        width: fit-content;
-        transition: all 0.3s;
-    
-        &:hover {
-        background: #6a00f4;
         }
 }
 
