@@ -5,25 +5,25 @@ import { useTranslation } from "react-i18next";
 
 const projects = [
     {
+        title: "Paco Bargues Art",
+        descriptionKey: "art_bargues_description",  
+        technologies: ["HTML", "SASS","Bootstrap", "JavaScript", "React", "Vite"],
+        github: "https://github.com/Mariaguerrero95/PacoBarguesArt-Website",
+        demo: "https://mariaguerrero95.github.io/PacoBarguesArt-Website/#/",
+    },
+    {
         title: "Rick and Morty Character finder",
-        descriptionKey: "rick_and_morty_description",  // Referirnos a la clave de traducción
-        technologies: ["React", "Vite", "Javascript", "HTML", "SASS", "Bootstrap"],
+        descriptionKey: "rick_and_morty_description",  
+        technologies: ["HTML", "SASS", "Bootstrap","Javascript","React", "Vite"],
         github: "https://github.com/Mariaguerrero95/modulo-3-evaluacion-final-Mariaguerrero95",
         demo: "https://mariaguerrero95.github.io/modulo-3-evaluacion-final-Mariaguerrero95/#/",
     },
     {
         title: "Anime series finder",
-        descriptionKey: "anime_series_finder_description",  // Referirnos a la clave de traducción
-        technologies: ["HTML", "SASS", "JavaScript", "Fetch API", "LocalStorage", "Bootstrap"],
+        descriptionKey: "anime_series_finder_description",  
+        technologies: ["HTML", "SASS", "Bootstrap", "JavaScript", "Fetch API", "LocalStorage", "Bootstrap"],
         github: "https://github.com/Adalab/modulo-2-evaluacion-final-Mariaguerrero95",
         demo: "https://beta.adalab.es/modulo-2-evaluacion-final-Mariaguerrero95/",
-    },
-    {
-        title: "Sports e-commerce landing page",
-        descriptionKey: "sports_ecommerce_landing_page_description",  // Referirnos a la clave de traducción
-        technologies: ["HTML", "CSS", "SCSS", "Bootstrap"],
-        github: "https://github.com/Mariaguerrero95/evaluacion-modulo-1-Mariaguerrero95",
-        demo: "https://mariaguerrero95.github.io/evaluacion-modulo-1-Mariaguerrero95/",
     }
 ];
 

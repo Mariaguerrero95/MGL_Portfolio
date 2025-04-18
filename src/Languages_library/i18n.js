@@ -31,10 +31,10 @@ const resources = {
             "projects": "Projects",
             "Rick and Morty Character finder": "Rick and Morty Character finder",
             "Anime series finder": "Anime series finder",
-            "Sports e-commerce landing page": "Sports e-commerce landing page",
+            "art_bargues_description": "I crafted and developed an online showcase for the painter and artist Paco Bargues, bringing his entire collection to life through an elegant gallery and offering an easy way for art enthusiasts to get in touch.",
             "rick_and_morty_description": "This GitHub repository contains the characters from the Rick and Morty series. Users can view detailed information about each character, including their name, species, and the number of episodes they appear in.",
             "anime_series_finder_description": "Developed a dynamic web application for searching anime series using an external API. Users can mark their favorite series, manage their favorites by removing individual items or resetting the entire list, and retain their selections even after refreshing the page.",
-            "sports_ecommerce_landing_page_description": "Designed and developed a responsive landing page for a sports e-commerce brand. The website highlights seasonal promotions and features key sections like product highlights, a back-to-school campaign, and an accessible navigation menu.",
+            
             
             // Technologies
             "React": "React",
@@ -93,7 +93,7 @@ const resources = {
             "Sports e-commerce landing page": "Página de aterrizaje para e-commerce deportivo",
             "rick_and_morty_description": "Este repositorio de GitHub contiene los personajes de la serie Rick and Morty. Los usuarios pueden ver información detallada sobre cada personaje, incluyendo su nombre, especie y la cantidad de episodios en los que aparece.",
             "anime_series_finder_description": "Desarrollé una aplicación web dinámica para buscar series de anime usando una API externa. Los usuarios pueden marcar sus series favoritas, gestionar sus favoritos eliminando elementos individuales o reiniciando la lista completa, y mantener sus selecciones incluso después de recargar la página.",
-            "sports_ecommerce_landing_page_description": "Diseñé y desarrollé una página de aterrizaje responsive para una marca de e-commerce deportivo. El sitio web destaca promociones de temporada y presenta secciones clave como productos destacados, una campaña de regreso a clases y un menú de navegación accesible.",
+            "art_bargues_description": "He diseñado y desarrollado una web online para el pintor y artista Paco Bargues, dando vida a toda su colección a través de una galería elegante y ofreciendo una forma sencilla para que los amantes del arte puedan ponerse en contacto.",
             
             // Technologies
             "React": "React",
