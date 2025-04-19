@@ -55,7 +55,7 @@ const resources = {
             "angularCourseTitle": "Angular 17 Course",
             "angularCourseDescription": "Angular fundamentals and architectures.",
             "angularCoursePlatform": "Platzi",
-            "cybersecurityprogramTitle": "Programa en Ciberseguridad",
+            "cybersecurityprogramTitle": "Cybersecurity Program",
             "cybersecurityprogramDescription": "Fully remote Cybersecurity program, sponsored by Google.",
             "cybersecuritypregramPlatform": "Coursera / YesWeTech",
             "viewResource": "VIEW RESOURCE",
@@ -118,7 +118,7 @@ const resources = {
             "angularCourseTitle": "Curso Angular 17",
             "angularCourseDescription": "Fundamentos y arquitecturas de Angular.",
             "angularCoursePlatform": "Platzi",
-            "cybersecurityprogramTitle": "Cybersecurity Program",
+            "cybersecurityprogramTitle": "Programa en Ciberseguridad",
             "cybersecurityprogramDescription": "Programa en Ciberseguridad 100% remoto, becada por Google.",
             "viewResource": "VER RECURSO",
             
