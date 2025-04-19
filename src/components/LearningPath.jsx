@@ -19,6 +19,13 @@ const learningData = [
         icon: <FontAwesomeIcon icon={faLaptopCode} className="icon" />,
         link: "https://platzi.com/cursos/angular/"
     },
+    {
+        titleKey: "cybersecurityprogramTitle", // Clave para traducir el título
+        descriptionKey: "cybersecurityprogramDescription", // Clave para traducir la descripción
+        platformKey: "cybersecuritypregramPlatform", // Clave para traducir la plataforma
+        icon: <FontAwesomeIcon icon={faLaptopCode} className="icon" />,
+        link: "https://www.coursera.org/programs/yes-we-tech-google-learning-program-28izm"
+    },
 ];
 
 const LearningPath = () => {
