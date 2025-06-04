@@ -14,7 +14,7 @@ const resources = {
             "hello": "Hi",
             "im": "I'm a",
             "developer": "Front-end Developer",
-            "hero_description": "I am an enthusiastic and detail-oriented coder with a keen interest in front-end development and web design. I am passionate about creating user-friendly, responsive websites and improving user experiences. I have knowledge in HTML, CSS, Bootstrap, JavaScript, React, and Angular, as well as back-end solutions such as MySQL and ExpressJS.",
+            "hero_description": "I am an enthusiastic and detail-oriented coder with a keen interest in front-end development and web design. I am passionate about creating user-friendly, responsive websites and improving user experiences. I have knowledge in HTML, CSS, Bootstrap, JavaScript, React, Angular and Wordpress as well as back-end solutions such as MySQL and ExpressJS.",
             
             // Contact Form
             "contact": "Contact Me",
@@ -29,6 +29,7 @@ const resources = {
             
             // Projects
             "projects": "Projects",
+            "ciclicas_description": "I led the full development of the new Cíclicas Foundation website, creating a fully customized digital experience from scratch. I worked remotely with the team to restructure the architecture, optimize the user journey, and build a scalable, high-performance platform.",
             "Rick and Morty Character finder": "Rick and Morty Character finder",
             "Anime series finder": "Anime series finder",
             "Paco Bargues Art": "Paco Bargues Art",
@@ -76,7 +77,7 @@ const resources = {
             "hello": "Hola",
             "im": "Soy",
             "developer": "Desarrolladora Front-end",
-            "hero_description": "Soy una programadora entusiasta y orientada al detalle con un gran interés en el desarrollo front-end y el diseño web. Me apasiona crear sitios web fáciles de usar, responsivos y mejorar la experiencia del usuario. Tengo conocimientos en HTML, CSS, Bootstrap, JavaScript, React y Angular, así como en soluciones back-end como MySQL y ExpressJS.",
+            "hero_description": "Desarrolladora front-end entusiasta y orientada al detalle, especializada en crear experiencias web intuitivas, responsive y atractivas. Dominio de HTML, CSS, Bootstrap, JavaScript, React, Angular y WordPress complementado con conocimientos en soluciones back-end como MySQL y ExpressJS.",
             
             // Contact Form
             "contact": "Contáctame",
@@ -91,6 +92,8 @@ const resources = {
             
             // Projects
             "projects": "Proyectos",
+            "Web for Ciclicas Foundation": "Página web para la Fundación Cíclicas",
+            "ciclicas_description": "Lideré el desarrollo completo de la nueva web de Fundación Cíclicas, creando una experiencia digital personalizada desde cero. Trabajé en remoto con el equipo para reestructurar la arquitectura, optimizar el recorrido del usuario y construir una plataforma escalable y de alto rendimiento.",
             "Rick and Morty Character finder": "Buscador de personajes de Rick and Morty",
             "Anime series finder": "Buscador de series de anime",
             "Sports e-commerce landing page": "Página de aterrizaje para e-commerce deportivo",

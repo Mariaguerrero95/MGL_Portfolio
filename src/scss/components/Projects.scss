@@ -1,71 +1,84 @@
 @import '../core/variables';
 .projects {
     text-align: center;
-    padding: 50px;
+    padding: 50px 20px;
     color: #fff;
-    display: flex;
-    position: relative;
     font-family: $font-family;
-    
-        h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    h2 {
         color: $font-color;
         font-size: 2rem;
         font-weight: 100;
-        margin-bottom: 10px;
-        }
-    
-        p {
+        margin-bottom: 30px;
+    }
+    p {
         font-size: 1.2rem;
         margin-top: 25px;
         margin-bottom: 30px;
-        }
-    
-        &::before,
-        &::after {
+    }
+    &::before,
+    &::after {
         content: "";
         width: 100%;
         height: 2px;
         background: linear-gradient(to right, transparent, $primary-color, transparent);
         position: absolute;
         left: 0;
-        }
-    
-        &::before {
+    }
+    &::before {
         top: 0;
-        }
-    
-        &::after {
+    }
+    &::after {
         bottom: 0;
-        }
+    }
 }
+.projects-grid {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    max-width: 1200px; 
+    gap: 30px; 
+}
+.project-card {
+    background: linear-gradient(130deg, $background-secondary-color, $background-secondary-color);
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px $primary-color;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
     
-    .project-card {
-        background: linear-gradient(130deg, $background-secondary-color, $background-secondary-color);
-        padding: 20px;
-        margin: 20px auto;
-        max-width: 500px;
-        border-radius: 15px;
-        box-shadow: 0px 4px 10px $primary-color;
-        transition: transform 0.3s ease-in-out;
-        position: relative;
-        
-        &:hover {
+    /* ***** MODIFICACIÓN CLAVE PARA ALTURAS IGUALES Y CONTENIDO FLEXIBLE ***** */
+    display: flex;            /* Hace que la tarjeta sea un contenedor flex */
+    flex-direction: column;   /* Apila los elementos internos verticalmente */
+    /* ******************************************************************* */
+
+    &:hover {
         transform: rotateY(15deg);
-        }
-    
-        h3 {
+    }
+
+    h3 {
         color: $background-color;
         font-weight: 100;
         font-size: 1.5rem;
-        }
-    
-        .tech-list {
+    }
+
+    .tech-list {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
         justify-content: center;
         margin: 15px 0;
-    
+
+        /* Opcional: si quieres que la lista de tecnologías se estire para ocupar espacio central */
+        /* flex-grow: 1; */
+
         .tech {
             background: rgb(9, 52, 105);
             color: white;
@@ -73,14 +86,15 @@
             border-radius: 15px;
             font-size: 0.9rem;
         }
-        }
-    
-        .buttons {
+    }
+    .buttons {
         display: flex;
         justify-content: center;
         gap: 15px;
-        margin-top: 15px;
-    
+        /* ***** MODIFICACIÓN CLAVE PARA ALINEAR BOTONES ABAJO ***** */
+        margin-top: auto; /* Empuja los botones al final de la tarjeta */
+        /* ***************************************************** */
+
         .btn {
             background: linear-gradient(90deg, #e579aa, #ec5096);
             padding: 10px 20px;
@@ -89,73 +103,41 @@
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
-    
             &.demo {
-            background: linear-gradient(90deg, #e579aa, #ec5096);
+                background: linear-gradient(90deg, #e579aa, #ec5096);
             }
-    
             &:hover {
-            filter: brightness(1.2);
+                filter: brightness(1.2);
             }
         }
-        }
-}
-
-@media (max-width: 768px) {
-    .projects {
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .projects h2{
-        font-size: 1.5rem;
-    }
-    .project-card {
-        width: 90%;
     }
 }
-@media (max-width: 975px) {
-    .projects {
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+@media (min-width: 768px) {
+    .projects-grid {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; /* Mantiene 2 columnas de ancho flexible */
+        justify-content: center; /* Centra el grid si su max-width es menor al contenedor padre */
+        justify-items: center; /* Centra cada tarjeta dentro de su celda de la cuadrícula */
+        
+        /* ***** MODIFICACIÓN CLAVE PARA QUE LAS CARDS TENGAN LA MISMA ALTURA ***** */
+        align-items: stretch; /* ESTO ES LO QUE HACE QUE LAS TARJETAS SE ESTIREN A LA MISMA ALTURA EN LA FILA */
+        /* ************************************************************************ */
     }
     .project-card {
-        width: 90%;
+        margin: 0; 
+        width: auto; 
+        
+        /* ***** MODIFICACIÓN CLAVE PARA HACER LAS CARDS MÁS ANCHAS ***** */
+        max-width: 550px; /* Incrementa este valor (ej. de 450px a 550px o más) */
+                            /* Este controlará el ancho máximo de cada tarjeta individual */
+        /* ************************************************************** */
     }
-}
-@media (max-width: 979px) {
-    .projects {
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    /* SE ELIMINAN LAS SIGUIENTES REGLAS QUE CAUSABAN EL PROBLEMA:
+    .project-card:nth-child(3) {
+        grid-column: 1 / span 2; 
     }
-    .project-card {
-        width: 90%;
+    .projects-grid > .project-card:nth-last-child(1):nth-child(odd) {
+        grid-column: 1 / span 2;
     }
-}
-@media (max-width: 1023px) {
-    .projects {
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-card {
-        width: 90%;
-    }
-}
-@media (min-width: 1024px) {
-    .projects {
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-card {
-        width: 90%;
-    }
+    */
 }
