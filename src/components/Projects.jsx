@@ -9,7 +9,7 @@ const projects = [
         descriptionKey: "ciclicas_description",  
         technologies: ["WordPress", "PHP","mySQL", "HTML", "CSS", " Backup (UpdraftPlus)", "Elementor", "iThemes Security", "WPForms", "DNS", "SSL/HTTPS", "Hostalia", "Teamwork" ],
         github: null,
-        demo: "https://ciclicas.es/?currency=usd",
+        demo: "https://ciclicas.org/",
     },
     {
         title: "Paco Bargues Art",
