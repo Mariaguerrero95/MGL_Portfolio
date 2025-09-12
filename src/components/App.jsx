@@ -7,7 +7,7 @@ import Projects from "../components/Projects";
 import LearningPath from "../components/LearningPath";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-
+import Testimonials from "../components/Testimonials";
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
             <Skills />
             <Projects />
             <LearningPath />
+            <Testimonials/>
             <Contact />
             <Footer />
         </>
