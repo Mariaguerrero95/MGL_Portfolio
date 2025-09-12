@@ -62,7 +62,12 @@ const resources = {
             "viewResource": "VIEW RESOURCE",
             
             // Footer
-            "footer_text": "Made with ♥ by María Guerrero Lobo © 2025"
+            "footer_text": "Made with ♥ by María Guerrero Lobo © 2025",
+
+            //Testimonials
+            "testimonial_title": "Testimonials",
+            "testimonial_1": "Maria completely redesigned Cíclicas website with talent and strategic vision. Her work is clean, scalable, and precise, and she turns even our chaotic ideas into clear, functional solutions. A professional who adds value from day one—100% recommended.",
+            "testimonial_position_1": "Founder of Cíclicas"
         }
     },
     es: {
@@ -126,7 +131,12 @@ const resources = {
             "viewResource": "VER RECURSO",
             
             // Footer
-            "footer_text": "Hecho con ♥ por María Guerrero Lobo © 2025"
+            "footer_text": "Hecho con ♥ por María Guerrero Lobo © 2025",
+            
+            //Testimonials
+            "testimonial_title": "Testimonios",
+            "testimonial_1": "María rediseñó por completo la página web de Cíclicas con talento y visión estratégica. Su trabajo es limpio, escalable y preciso, y convierte incluso nuestras ideas caóticas en soluciones claras y funcionales. Una profesional que aporta valor desde el primer día — 100% recomendada.",
+            "testimonial_position_1": "Fundadora de Cíclicas"
         }
     }
 };
