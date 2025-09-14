@@ -7,20 +7,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: -25px; 
     position: relative; 
 }
-.contact::before {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, $primary-color, transparent);
-    position: absolute;
-    left: 0;
-}
-.contact::before {
-    top: 0;
-}
+
 .contact h2 {
     font-family: $font-family;
     font-weight: 100;

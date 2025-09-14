@@ -68,7 +68,12 @@ const resources = {
             //Testimonials
             "testimonial_title": "Testimonials",
             "testimonial_1": "Maria completely redesigned Cíclicas website with talent and strategic vision. Her work is clean, scalable, and precise, and she turns even our chaotic ideas into clear, functional solutions. A professional who adds value from day one—100% recommended.",
-            "testimonial_position_1": "Founder of Cíclicas"
+            "testimonial_position_1": "Founder of Cíclicas",
+
+            // Availability
+            "Available for projects": "Available for projects",
+            "Currently accepting web development projects.": "Currently accepting web development projects.",
+            "Average response time: 24 hours.": "Average response time: 24 hours."
         }
     },
     es: {
@@ -138,7 +143,12 @@ const resources = {
             //Testimonials
             "testimonial_title": "Testimonios",
             "testimonial_1": "María rediseñó por completo la página web de Cíclicas con talento y visión estratégica. Su trabajo es limpio, escalable y preciso, y convierte incluso nuestras ideas caóticas en soluciones claras y funcionales. Una profesional que aporta valor desde el primer día — 100% recomendada.",
-            "testimonial_position_1": "Fundadora de Cíclicas"
+            "testimonial_position_1": "Fundadora de Cíclicas", // ¡La coma que faltaba estaba aquí!
+
+            // Availability
+            "Available for projects": "Disponible para proyectos",
+            "Currently accepting web development projects.": "Actualmente acepto proyectos de desarrollo web.",
+            "Average response time: 24 hours.": "Tiempo de respuesta promedio: 24 horas."
         }
     }
 };
@@ -154,7 +164,6 @@ i18n.use(initReactI18next).init({
 });
 
 export default i18n;
-
 
 /*
 

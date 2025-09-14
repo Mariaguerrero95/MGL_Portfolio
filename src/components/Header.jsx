@@ -1,7 +1,7 @@
 import '../scss/components/Header.scss'; 
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { FaSun, FaMoon } from 'react-icons/fa'; // iconos luna y sol
+import { FaSun, FaMoon } from 'react-icons/fa'; // iconos luna/sol
 
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
         localStorage.setItem("language", lang);
     };
 
-    // Función para cambiar el tema
+    // Función para cambiar el tema luna/sol
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
