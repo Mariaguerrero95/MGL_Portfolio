@@ -17,7 +17,7 @@
     content: "";
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    background: linear-gradient(to right, transparent, $primary-color, transparent);
     position: absolute;
     top: 0;
     left: 0;
