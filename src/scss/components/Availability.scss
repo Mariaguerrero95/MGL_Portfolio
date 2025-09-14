@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     font-family: $font-family;
-    color: var(--font-color); 
+    color: $font-color;
     text-align: center;
     position: relative; /* Muy importante para posicionar la línea */
 }
