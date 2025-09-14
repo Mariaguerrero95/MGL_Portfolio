@@ -1,6 +1,7 @@
 import '../scss/components/Header.scss'; 
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { FaSun, FaMoon } from 'react-icons/fa'; // iconos luna y sol
 
 
 const Header = () => {
@@ -8,11 +9,29 @@ const Header = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1013);
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef = useRef(null);  // Referencia para el menú desplegable
+    const [theme, setTheme] = useState('dark');
     
     const changeLanguage = (lang) => {
         i18n.changeLanguage(lang);
         localStorage.setItem("language", lang);
     };
+
+    // Función para cambiar el tema
+    const toggleTheme = () => {
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+        document.body.className = newTheme === 'light' ? 'light-mode' : '';
+    };
+
+    // Efecto para cargar el tema desde localStorage al inicio
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+            document.body.className = savedTheme === 'light' ? 'light-mode' : '';
+        }
+    }, []);
 
     // Detectar cambios de tamaño de pantalla
     useEffect(() => {
@@ -54,6 +73,7 @@ const Header = () => {
                                 <li><a href="#skills" onClick={() => setMenuOpen(false)}>{t("SKILLS")}</a></li>
                                 <li><a href="#projects" onClick={() => setMenuOpen(false)}>{t("PROJECTS")}</a></li>
                                 <li><a href="#learning-path" onClick={() => setMenuOpen(false)}>{t("LEARNING PATH")}</a></li>
+                                <li><a href="#testimonials" onClick={() => setMenuOpen(false)}>{t("Testimonials")}</a></li>
                                 <li><a href="#contact" onClick={() => setMenuOpen(false)}>{t("CONTACT")}</a></li>
                             </ul>
                         </nav>
@@ -65,18 +85,29 @@ const Header = () => {
                         <li><a href="#skills">{t("SKILLS")}</a></li>  
                         <li><a href="#projects">{t("PROJECTS")}</a></li>
                         <li><a href="#learning-path">{t("LEARNING PATH")}</a></li>
+                        <li><a href="#testimonials">{t("Testimonials")}</a></li>
                         <li><a href="#contact">{t("CONTACT")}</a></li>
                     </ul>
                 </nav>
             )}
-            <select 
-                onChange={(e) => changeLanguage(e.target.value)} 
-                className="language-selector"
-                value={i18n.language} 
-            >
-                <option value="en">EN</option>
-                <option value="es">ES</option>
-            </select>
+            <div className="utility-buttons">
+                <select 
+                    onChange={(e) => changeLanguage(e.target.value)} 
+                    className="language-selector"
+                    value={i18n.language} 
+                >
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
+                </select>
+                {/* Botón para el cambio de tema */}
+                <button 
+                    className="theme-toggle-button" 
+                    onClick={toggleTheme}
+                >
+                    {/* Renderiza el ícono correcto según el tema actual */}
+                    {theme === 'dark' ? <FaSun /> : <FaMoon />}
+                </button>
+            </div>
         </header>
     );
 };

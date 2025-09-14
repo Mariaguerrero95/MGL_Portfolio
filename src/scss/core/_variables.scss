@@ -1,4 +1,4 @@
-// 🎨 Colores
+// 🎨 Variables del Tema Oscuro (por defecto)
 $primary-color: #ec4899;
 $secondary-color: #ea8fbd;
 $background-color: rgb(177, 198, 226);
@@ -6,6 +6,31 @@ $background-secondary-color: rgb(4, 31, 63);
 $card-background: rgb(121, 170, 234);
 $border-color: #2a2e5a;
 $font-color: rgb(255, 255, 255);
+$card-shadow-color: rgba(2, 2, 2, 0.4);
+
+// Variables del Tema Oscuro (por defecto)
+:root {
+    --primary-color: #{$primary-color};
+    --secondary-color: #{$secondary-color};
+    --background-color: #{$background-secondary-color}; // El fondo principal será el oscuro
+    --background-secondary-color: #{$background-color}; // El secundario, el claro
+    --card-background: #{$card-background};
+    --border-color: #{$border-color};
+    --font-color: #{$font-color};
+    --card-shadow-color: rgba(2, 2, 2, 0.4);
+  }
+
+// Variables del Tema Claro
+body.light-mode {
+    --primary-color: #f0a500; // Puedes elegir un color brillante para el modo claro
+    --secondary-color: #6a0572; // Y un color secundario que contraste
+    --background-color: #f3cdec; // Fondo principal claro
+    --background-secondary-color: #ffffff; // Fondo secundario aún más claro
+    --card-background: #e6e6e6; // Un color para las tarjetas
+    --border-color: #ccc;
+    --font-color: #333333;
+    --card-shadow-color: rgba(100, 100, 100, 0.2);
+}
 
 // Font
 $font-family: 'Poppins', sans-serif;

@@ -9,6 +9,7 @@ const resources = {
             "PROJECTS": "Projects",
             "LEARNING PATH": "Learning Path",
             "CONTACT": "Contact",
+            "Testimonials": "Testimonials",
             
             // Hero Section
             "hello": "Hi",
@@ -77,6 +78,7 @@ const resources = {
             "PROJECTS": "Proyectos",
             "LEARNING PATH": "Ruta de aprendizaje",
             "CONTACT": "Contáctame",
+            "Testimonials": "Testimonios",
             
             // Hero Section
             "hello": "Hola",
