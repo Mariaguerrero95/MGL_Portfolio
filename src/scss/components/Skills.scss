@@ -14,15 +14,15 @@
         .skills-container {
         overflow: hidden;
         width: 100%;
+        overflow-x: auto;
         position: relative;
-        white-space: nowrap;
         padding: 20px 0;
         }
         .skills-slider {
         display: flex;
         gap: 20px;
         animation: scroll 13s linear infinite;
-        width: calc(200px * 12); /* Asegura un loop continuo */
+        width: 100%;
         }
         .skill-item {
         display: flex;

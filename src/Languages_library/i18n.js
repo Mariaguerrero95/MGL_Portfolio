@@ -61,6 +61,7 @@ const resources = {
             "cybersecurityprogramDescription": "Fully remote Cybersecurity program, sponsored by Google.",
             "cybersecuritypregramPlatform": "Coursera / YesWeTech",
             "viewResource": "VIEW RESOURCE",
+            "downloadCertificate": "Download diploma",
             
             // Footer
             "footer_text": "Made with ♥ by María Guerrero Lobo © 2025",
@@ -136,6 +137,7 @@ const resources = {
             "cybersecurityprogramTitle": "Programa en Ciberseguridad",
             "cybersecurityprogramDescription": "Programa en Ciberseguridad 100% remoto, becada por Google.",
             "viewResource": "VER RECURSO",
+            "downloadCertificate": "Descargar diploma",
             
             // Footer
             "footer_text": "Hecho con ♥ por María Guerrero Lobo © 2025",

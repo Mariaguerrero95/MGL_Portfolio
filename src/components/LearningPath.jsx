@@ -37,15 +37,32 @@ const LearningPath = () => {
             <div className="cards-container">
                 {learningData.map((item, index) => (
                     <div key={index} className="card">
-                        <div className="card-header">
-                            <div className="card-icon">{item.icon}</div>
-                            <h3 className="card-title">{t(item.titleKey)}</h3> {/* Título traducido */}
+                    <div className="card-header">
+                        <div className="card-icon">{item.icon}</div>
+                        <h3 className="card-title">{t(item.titleKey)}</h3>
                         </div>
-                        <p className="card-description">{t(item.descriptionKey)}</p> {/* Descripción traducida */}
+                    
+                        <p className="card-description">{t(item.descriptionKey)}</p>
+                    
+                        {/* Contenedor horizontal para que todos estén en fila */}
+                        <div className="card-footer">
                         <a href={item.link} className="card-link">
-                            {t("viewResource")} {/* Texto de "VIEW RESOURCE" traducido */}
+                            {t("viewResource")}
                         </a>
-                        <span className="card-platform">{t(item.platformKey)}</span> {/* Plataforma traducida */}
+                    
+                        {item.titleKey === "fullStackBootcampTitle" && (
+                            <a
+                            href={`${import.meta.env.BASE_URL}Diploma.pdf`}
+                            className="download-button"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >
+                            {t("downloadCertificate", "Download diploma")}
+                            </a>
+                        )}
+                    
+                        <span className="card-platform">{t(item.platformKey)}</span>
+                        </div>
                     </div>
                 ))}
             </div>
