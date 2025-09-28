@@ -1,4 +1,5 @@
 @import '../core/variables';
+
 .projects {
     text-align: center;
     padding: 50px 20px;
@@ -8,6 +9,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    
     h2 {
         color: $font-color;
         font-size: 2rem;
@@ -19,6 +21,7 @@
         margin-top: 25px;
         margin-bottom: 30px;
     }
+    
     &::before,
     &::after {
         content: "";
@@ -28,24 +31,28 @@
         position: absolute;
         left: 0;
     }
+    
     &::before {
         top: 0;
     }
+    
     &::after {
         bottom: 0;
     }
 }
+
 .projects-grid {
     display: flex; 
     flex-direction: column;
     align-items: center; 
     width: 100%;
     max-width: 1200px; 
-    gap: 30px; 
+    gap: 50px; 
 }
+
 .project-card {
     background: linear-gradient(130deg, $background-secondary-color, $background-secondary-color);
-    padding: 20px;
+    padding: 30px;
     margin: 0;
     width: 100%;
     max-width: 500px;
@@ -54,90 +61,92 @@
     transition: transform 0.3s ease-in-out;
     position: relative;
     
-    /* ***** MODIFICACIÓN CLAVE PARA ALTURAS IGUALES Y CONTENIDO FLEXIBLE ***** */
-    display: flex;            /* Hace que la tarjeta sea un contenedor flex */
-    flex-direction: column;   /* Apila los elementos internos verticalmente */
-    /* ******************************************************************* */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     &:hover {
         transform: rotateY(15deg);
     }
-
-    h3 {
-        color: $background-color;
-        font-weight: 100;
-        font-size: 1.5rem;
-    }
-
-    .tech-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        justify-content: center;
-        margin: 15px 0;
-
-        /* Opcional: si quieres que la lista de tecnologías se estire para ocupar espacio central */
-        /* flex-grow: 1; */
-
-        .tech {
-            background: rgb(9, 52, 105);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-    }
-    .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        /* ***** MODIFICACIÓN CLAVE PARA ALINEAR BOTONES ABAJO ***** */
-        margin-top: auto; /* Empuja los botones al final de la tarjeta */
-        /* ***************************************************** */
-
-        .btn {
-            background: linear-gradient(90deg, #e579aa, #ec5096);
-            padding: 10px 20px;
-            color: white;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            &.demo {
-                background: linear-gradient(90deg, #e579aa, #ec5096);
-            }
-            &:hover {
-                filter: brightness(1.2);
-            }
-        }
+    
+    @media (min-width: 768px) {
+        flex-direction: row; 
+        max-width: 800px;
+        gap: 30px;
+        // La clave para centrar el video y el texto
+        align-items: center;
     }
 }
-@media (min-width: 768px) {
-    .projects-grid {
-        display: grid; 
-        grid-template-columns: 1fr 1fr; /* Mantiene 2 columnas de ancho flexible */
-        justify-content: center; /* Centra el grid si su max-width es menor al contenedor padre */
-        justify-items: center; /* Centra cada tarjeta dentro de su celda de la cuadrícula */
+
+.project-media {
+    flex: 1;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    // Aumenta la altura del video
+    padding-top: 65%;
+    
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+}
+
+.project-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    color: $background-color;
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 15px 0;
+    
+    .tech {
+        background: rgb(9, 52, 105);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto;
+    
+    .btn {
+        background: linear-gradient(90deg, #e579aa, #ec5096);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
         
-        /* ***** MODIFICACIÓN CLAVE PARA QUE LAS CARDS TENGAN LA MISMA ALTURA ***** */
-        align-items: stretch; /* ESTO ES LO QUE HACE QUE LAS TARJETAS SE ESTIREN A LA MISMA ALTURA EN LA FILA */
-        /* ************************************************************************ */
-    }
-    .project-card {
-        margin: 0; 
-        width: auto; 
+        &.demo {
+            background: linear-gradient(90deg, #e579aa, #ec5096);
+        }
         
-        /* ***** MODIFICACIÓN CLAVE PARA HACER LAS CARDS MÁS ANCHAS ***** */
-        max-width: 550px; /* Incrementa este valor (ej. de 450px a 550px o más) */
-                            /* Este controlará el ancho máximo de cada tarjeta individual */
-        /* ************************************************************** */
+        &:hover {
+            filter: brightness(1.2);
+        }
     }
-    /* SE ELIMINAN LAS SIGUIENTES REGLAS QUE CAUSABAN EL PROBLEMA:
-    .project-card:nth-child(3) {
-        grid-column: 1 / span 2; 
-    }
-    .projects-grid > .project-card:nth-last-child(1):nth-child(odd) {
-        grid-column: 1 / span 2;
-    }
-    */
 }
