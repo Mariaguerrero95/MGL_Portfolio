@@ -71,9 +71,8 @@
     
     @media (min-width: 768px) {
         flex-direction: row; 
-        max-width: 800px;
-        gap: 30px;
-        // La clave para centrar el video y el texto
+        max-width: 1000px; // AUMENTADO A 1000px PARA HACERLA MÁS ANCHA
+        gap: 40px; // AUMENTADO PARA MÁS ESPACIO ENTRE VIDEO Y TEXTO
         align-items: center;
     }
 }
@@ -85,7 +84,6 @@
 .video-container {
     position: relative;
     width: 100%;
-    // Aumenta la altura del video
     padding-top: 65%;
     
     iframe {
