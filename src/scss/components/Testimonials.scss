@@ -54,7 +54,7 @@
         .testimonial-text {
             font-style: italic;
             margin-bottom: 15px;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
         }
         .testimonial-author {
             font-weight: bold;
@@ -67,4 +67,10 @@
         }
         }
     }
+}
+
+/* --- NUEVOS ESTILOS PARA MODO DÍA --- */
+body.light-mode .testimonials-container .testimonial-card {
+    background: linear-gradient(130deg, $background-secondary-color, $background-secondary-color);
+    box-shadow: 0px 0px 5px $primary-color;
 }

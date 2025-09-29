@@ -202,3 +202,146 @@
     }
     
 }
+body.light-mode .social-icons a {
+    /* Color de los iconos en modo día (azul) */
+    color: $background-color;
+}
+
+.social-icons a:hover {
+    color: $primary-color;        
+}
+
+@media (max-width: 768px) {
+    .hero-text p {
+        margin: 0 20px;
+        padding: 0 5%;
+    }
+    .hero {
+        margin-top: 25px;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .hero-image{
+        order: -1; 
+        margin-bottom: 40px;
+        width: 100px;
+        height: 100px;
+    }
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .buttons {
+        gap: 10px;
+    }
+    .hero-image {
+        height: 250px;
+        width: 250px;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    .social-icons {
+        flex-direction: row; 
+        justify-content: center;
+        gap: 8px;       
+    }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+    .hero {
+        margin-left: 50px;
+        font-size: 20px;
+        margin-top: 60px;
+        padding: 20px;
+    }
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+    .hero-text p {
+        max-width: 800px;
+        margin-right: 40px;
+        font-size: 1rem;
+        padding-top: 18px;
+        padding-right: 25px;
+    }
+    .buttons{
+        margin-left: -10px;
+    }
+    .social-icons {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 25px;
+        align-self: flex-start;
+        margin-top: 30px;
+    }
+    .social-icons a {
+        font-size: 2.2rem;
+    }
+    .hero {
+        flex-direction: row; // Mantiene la imagen a la derecha en pantallas grandes
+    }
+
+    .hero-image {
+        order: 1;  // En pantallas grandes, la imagen vuelve a la derecha
+    }
+}
+@media (min-width: 1024px) {
+    .hero {
+        margin-left: 50px;
+        font-size: 25px;
+        margin-top: 80px;
+        padding: 20px;
+    }
+    .hero-text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero-text h2 {
+        margin-left: 30px;
+        font-size: 2.5rem;
+    }
+    .hero-text p {
+        max-width: 900px;
+        margin-right: 50px;
+        margin-left: 30px;
+        font-size: 1.2rem;
+        padding-top: 20px;
+        padding-right: 30px;
+    }
+    .buttons {
+        margin-left: 20px;
+        gap: 20px;
+    }
+    .social-icons a {
+        padding-top: 30px;
+        font-size: 2.5rem;
+        margin-left: -3px;
+    }
+    .social-icons {
+        flex-direction: row; 
+        margin-left: 30px; // Misma alineación que h2 y p
+        margin-top: 10px; // Ajusta altura si es necesario
+        justify-content: flex-start;
+        gap: 30px;
+        align-self: flex-start;
+        
+    }
+    .hero {
+        flex-direction: row; // Mantiene la imagen a la derecha en pantallas grandes
+    }
+
+    .hero-image {
+        order: 1;  // En pantallas grandes, la imagen vuelve a la derecha
+        margin-right: 70px;
+        margin-top: -30px;
+        width: 360px;
+        height: 360px;
+    }
+    
+}
