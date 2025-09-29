@@ -2,7 +2,7 @@
 
 .projects {
     text-align: center;
-    padding: 50px 20px;
+    padding: 150px 20px;
     color: #fff;
     font-family: $font-family;
     display: flex;
@@ -50,15 +50,18 @@
     gap: 50px; 
 }
 
+/* Estilos de las tarjetas por defecto (modo noche) */
 .project-card {
-    background: linear-gradient(130deg, $background-secondary-color, $background-secondary-color);
+    /* Fondo con degradado rosa para el MODO NOCHE */
+    background: $secondary-color;
     padding: 30px;
     margin: 0;
     width: 100%;
     max-width: 500px;
     border-radius: 15px;
-    box-shadow: 0px 4px 10px $primary-color;
-    transition: transform 0.3s ease-in-out;
+    /* Sombra rosa para combinar con el fondo */
+    box-shadow: 0px 4px 15px rgba(236, 80, 150, 0.4);
+    transition: transform 0.3s ease-in-out, background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
     position: relative;
     
     display: flex;
@@ -71,10 +74,19 @@
     
     @media (min-width: 768px) {
         flex-direction: row; 
-        max-width: 1000px; // AUMENTADO A 1000px PARA HACERLA MÁS ANCHA
-        gap: 40px; // AUMENTADO PARA MÁS ESPACIO ENTRE VIDEO Y TEXTO
+        max-width: 1000px; 
+        gap: 40px;
         align-items: center;
     }
+}
+
+/* Estilos de las tarjetas para el MODO DÍA */
+/* Se aplica cuando el body tiene la clase 'light-mode' */
+body.light-mode .project-card {
+    /* Vuelve a tu fondo azul original */
+    background: linear-gradient(130deg, $background-secondary-color, $background-secondary-color);
+    /* Vuelve a tu sombra azul original */
+    box-shadow: 0px 4px 10px $primary-color;
 }
 
 .project-media {
@@ -103,8 +115,8 @@
 }
 
 h3 {
-    color: $background-color;
-    font-weight: 100;
+    color: $font-color;
+    font-weight: 350;
     font-size: 1.5rem;
 }
 
