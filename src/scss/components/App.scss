@@ -1,39 +1,38 @@
 // Estilos globales para el body
 body {
-    background-color: var(--background-color);
-    color: var(--font-color);
-    font-family: var(--font-family);
-    transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .utility-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .theme-toggle-button {
-    background-color: transparent;
-    border: 2px solid var(--button-color);
-    border-radius: 50%; /* Esto hace el botón redondo */
-    width: 45px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    padding: 0;
+  background-color: transparent;
+  border: 2px solid var(--button-color);
+  border-radius: 50%; /* Esto hace el botón redondo */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  padding: 0;
 }
 
 .theme-toggle-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }
 
 .theme-toggle-button svg {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    transition: color 0.3s;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  transition: color 0.3s;
 }
-
