@@ -29,6 +29,8 @@ const resources = {
             "message_error": "There was an error sending the message.",
             
             // Projects
+            "Web for Zano": "Web for Zano",
+            "zano_description": "Worked on an existing web platform, improving its visual style and significantly enhancing frontend interactivity through continuous collaboration and feedback with the client. The work focused on refactoring and extending existing components, adding new interactive sections, and improving the overall user experience. Project currently in a pre-launch phase.",
             "projects": "Projects",
             "ciclicas_description": "I led the full development of the new Cíclicas Foundation website, creating a fully customized digital experience from scratch. I worked remotely with the team to restructure the architecture, optimize the user journey, and build a scalable, high-performance platform.",
             "Rick and Morty Character finder": "Rick and Morty Character finder",
@@ -70,7 +72,11 @@ const resources = {
             "testimonial_title": "Testimonials",
             "testimonial_1": "Maria completely redesigned Cíclicas website with talent and strategic vision. Her work is clean, scalable, and precise, and she turns even our chaotic ideas into clear, functional solutions. A professional who adds value from day one—100% recommended.",
             "testimonial_position_1": "Founder of Cíclicas",
-
+            "testimonial_title": "Testimonials",
+            "testimonial_1": "Maria completely redesigned Cíclicas website with talent and strategic vision. Her work is clean, scalable, and precise, and she turns even our chaotic ideas into clear, functional solutions. A professional who adds value from day one—100% recommended.",
+            "testimonial_position_1": "Founder of Cíclicas",
+            "testimonial_2": "Maria is an extremely attentive and passionate software developer. I contracted Maria near the end of 2025 to deliver several enhancements to our website, which at the time was lacking polish and clarity, with many elements feeling outdated.\n\nMaria was very quick to understand the ideas we wanted to express through our site. She was not only an excellent listener who took in every detail, but also highly proactive in suggesting her own ideas and concepts to improve the site while still aligning closely with our overall goals.\n\nIn the end, Maria delivered exceptional-quality work and even went above and beyond in several areas. I would highly recommend Maria to any workplace looking for a passionate, eager, and genuinely lovely professional to work with.",
+            "testimonial_position_2": "Founder of Zano",
             // Availability
             "Available for projects": "Available for projects",
             "Currently accepting web development projects.": "Currently accepting web development projects.",
@@ -105,7 +111,9 @@ const resources = {
             
             // Projects
             "projects": "Proyectos",
-            "Web for Ciclicas Foundation": "Página web para la Fundación Cíclicas",
+            "Web for Zano": "Web para Zano",
+            "zano_description": "Trabajé sobre una plataforma web existente, mejorando su estilo visual y aumentando significativamente la interactividad del frontend mediante una colaboración continua y feedback directo con el cliente. Mi trabajo se centró en refactorizar y ampliar componentes existentes, añadir nuevas secciones interactivas y mejorar la experiencia de usuario general. Proyecto actualmente en fase previa al lanzamiento.",
+            "Web for Ciclicas Foundation": "Web para la Fundación Cíclicas",
             "ciclicas_description": "Lideré el desarrollo completo de la nueva web de Fundación Cíclicas, creando una experiencia digital personalizada desde cero. Trabajé en remoto con el equipo para reestructurar la arquitectura, optimizar el recorrido del usuario y construir una plataforma escalable y de alto rendimiento.",
             "Rick and Morty Character finder": "Buscador de personajes de Rick and Morty",
             "Anime series finder": "Buscador de series de anime",
@@ -125,6 +133,9 @@ const resources = {
             "FetchAPI": "Fetch API",
             "LocalStorage": "LocalStorage",
             "SCSS": "SCSS",
+            "Frontend Refactoring": "Refactorización Frontend",
+            "Interactive UI": "Interfaz interactiva",
+            "UX Improvements": "Mejoras de experiencia de usuario",
             
             // Learning Path
             "learningPathTitle": "Estudios recientes",
@@ -145,8 +156,11 @@ const resources = {
             //Testimonials
             "testimonial_title": "Testimonios",
             "testimonial_1": "María rediseñó por completo la página web de Cíclicas con talento y visión estratégica. Su trabajo es limpio, escalable y preciso, y convierte incluso nuestras ideas caóticas en soluciones claras y funcionales. Una profesional que aporta valor desde el primer día — 100% recomendada.",
-            "testimonial_position_1": "Fundadora de Cíclicas", // ¡La coma que faltaba estaba aquí!
-
+            "testimonial_position_1": "Fundadora de Cíclicas", 
+            "testimonial_1": "María rediseñó por completo la página web de Cíclicas con talento y visión estratégica. Su trabajo es limpio, escalable y preciso, y convierte incluso nuestras ideas caóticas en soluciones claras y funcionales. Una profesional que aporta valor desde el primer día — 100% recomendada.",
+            "testimonial_position_1": "Fundadora de Cíclicas",
+            "testimonial_2": "María es una desarrolladora de software extremadamente atenta y apasionada. Contacté con María a finales de 2025 para realizar varias mejoras en nuestra web, que en ese momento carecía de pulido y claridad, con muchos elementos que se sentían desactualizados.\n\nMaría comprendió muy rápidamente las ideas que queríamos transmitir a través del sitio. No solo fue una excelente oyente, atenta a cada detalle, sino también muy proactiva a la hora de proponer sus propias ideas y conceptos para mejorar la web, siempre alineándose con nuestros objetivos generales.\n\nEl resultado final fue un trabajo de calidad excepcional, superando incluso las expectativas en varios aspectos. Recomiendo encarecidamente a María a cualquier empresa que busque a una profesional apasionada, comprometida y verdaderamente encantadora.",
+            "testimonial_position_2": "Fundador de Zano",
             // Availability
             "Available for projects": "Disponible para proyectos",
             "Currently accepting web development projects.": "Actualmente acepto proyectos de desarrollo web.",

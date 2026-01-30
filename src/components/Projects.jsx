@@ -5,6 +5,24 @@ import { useTranslation } from "react-i18next";
 
 const projects = [
     {
+        title: "Web for Zano",
+        descriptionKey: "zano_description",
+        technologies: [
+            "React",
+            "Next.js",
+            "JavaScript (ES6)",
+            "HTML",
+            "CSS",
+            "Frontend Refactoring",
+            "Interactive UI",
+            "UX Improvements"
+        ],
+        videoUrl: null, 
+        imageUrl: "./zano-preview.png",
+        github: null, 
+        demo: "https://zano.ie/",
+    },    
+    {
         title: "Web for Ciclicas Foundation",
         descriptionKey: "ciclicas_description",  
         technologies: ["WordPress", "PHP","mySQL", "HTML", "CSS", " Backup (UpdraftPlus)", "Elementor", "iThemes Security", "WPForms", "DNS", "SSL/HTTPS", "Hostalia", "Teamwork" ],
@@ -48,20 +66,26 @@ const Projects = () => {
             <div className="projects-grid">
                 {projects.map((project, index) => (
                     <div key={index} className="project-card">
-                        {/* Contenedor del video: solo se muestra si videoUrl existe */}
-                        {project.videoUrl && (
-                            <div className="project-media">
+                        {/* Contenedor del video o imagen */}
+                        <div className="project-media">
+                            {project.videoUrl ? (
                                 <div className="video-container">
                                     <iframe
                                         src={`${project.videoUrl}?loop=1&playlist=${project.videoUrl.split('/').pop()}&controls=0&mute=1`}
                                         title={t(project.title)}
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowFullScreen>
-                                    </iframe>
+                                        allowFullScreen
+                                    />
                                 </div>
-                            </div>
-                        )}
+                            ) : project.imageUrl ? (
+                                <img
+                                    src={project.imageUrl}
+                                    alt={t(project.title)}
+                                    className="project-image"
+                                />
+                            ) : null}
+                        </div>
                         
                         {/* Contenedor de la descripción */}
                         <div className="project-description">
@@ -87,4 +111,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
