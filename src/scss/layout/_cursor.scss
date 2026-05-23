@@ -1,0 +1,39 @@
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    will-change: transform;
+
+    @media (hover: none) { display: none; }
+}
+
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    margin-left: -3px;
+    margin-top: -3px;
+}
+
+.cursor-ring {
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    margin-top: -18px;
+    border: 1px solid var(--accent);
+    transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out),
+                margin 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+
+    &.is-active {
+        width: 56px;
+        height: 56px;
+        margin-left: -28px;
+        margin-top: -28px;
+        border-color: var(--accent);
+        background: rgba(168, 164, 255, 0.06);
+    }
+}

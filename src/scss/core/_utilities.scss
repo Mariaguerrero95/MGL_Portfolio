@@ -1,0 +1,180 @@
+// =======================================================
+// LAYOUT & UI UTILITIES
+// =======================================================
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-pad);
+}
+
+.section {
+    padding-block: clamp(64px, 9vw, 128px);
+    position: relative;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+    flex-wrap: wrap;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 600;
+
+    &__dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: var(--success);
+        box-shadow: 0 0 10px rgba(67, 209, 138, 0.7);
+        animation: pulse-dot 2s var(--ease-in-out) infinite;
+    }
+
+    &--accent &__dot { background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
+}
+
+.magnet {
+    display: inline-block;
+
+    > * { transition: transform 0.35s var(--ease-out); }
+}
+
+.chip--ghost {
+    background: transparent;
+    border-color: var(--border);
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin-block: var(--space-7);
+}
+
+// -------- Buttons --------
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: transform 0.35s var(--ease-out), background 0.3s var(--ease-out),
+                color 0.3s var(--ease-out), border-color 0.3s var(--ease-out),
+                box-shadow 0.4s var(--ease-out);
+    will-change: transform;
+    border: 1px solid transparent;
+    position: relative;
+
+    .arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        transition: transform 0.35s var(--ease-out), background 0.3s var(--ease-out);
+    }
+
+    &:hover .arrow {
+        transform: translateX(3px);
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &--primary {
+        background: var(--btn-primary-bg);
+        color: var(--btn-primary-text);
+        border-color: var(--btn-primary-border);
+
+        &:hover {
+            box-shadow: var(--shadow-md), var(--shadow-glow);
+        }
+    }
+
+    &--secondary {
+        background: var(--btn-secondary-bg);
+        color: var(--btn-secondary-text);
+        border-color: var(--btn-secondary-border);
+
+        &:hover {
+            background: var(--surface);
+            border-color: var(--border-strong);
+        }
+    }
+
+    &--ghost {
+        background: transparent;
+        color: var(--text);
+        padding: 10px 14px;
+    }
+}
+
+// -------- Cards --------
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.3s var(--ease-out), transform 0.5s var(--ease-out),
+                box-shadow 0.5s var(--ease-out);
+}
+
+.glass {
+    background: var(--surface-glass);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid var(--border);
+}
+
+// -------- Chips --------
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    font-size: var(--fs-xs);
+    color: var(--text-muted);
+    background: transparent;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.3s, border-color 0.3s, background 0.3s;
+
+    &:hover {
+        color: var(--text);
+        border-color: var(--border-strong);
+    }
+}
+
+// -------- Helpers --------
+.text-muted { color: var(--text-muted); }
+.text-accent { color: var(--accent); }
+.serif-italic { font-family: var(--font-serif); font-style: italic; }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

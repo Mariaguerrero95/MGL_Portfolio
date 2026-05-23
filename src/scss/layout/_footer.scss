@@ -1,0 +1,97 @@
+.site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding-block: var(--space-8) var(--space-6);
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: var(--space-7);
+        align-items: start;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+        }
+        @media (max-width: 480px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__brand-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    &__logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--btn-primary-bg);
+        color: var(--btn-primary-text);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-serif);
+        font-size: 20px;
+        border: 1px solid var(--border-strong);
+    }
+
+    &__brand-name {
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        color: var(--text);
+    }
+
+    &__role {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-top: 2px;
+    }
+
+    &__col {
+        ul {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        a {
+            font-size: var(--fs-sm);
+            color: var(--text);
+            opacity: 0.85;
+            transition: color 0.25s, opacity 0.25s;
+
+            &:hover { color: var(--accent); opacity: 1; }
+        }
+
+        li { font-size: var(--fs-sm); color: var(--text); opacity: 0.85; }
+    }
+
+    &__availability {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--success);
+            box-shadow: 0 0 10px rgba(67, 209, 138, 0.7);
+            animation: pulse-dot 2s var(--ease-in-out) infinite;
+        }
+    }
+
+    &__legal {
+        margin-top: var(--space-7);
+        padding-top: var(--space-5);
+        border-top: 1px solid var(--border);
+
+        p {
+            font-size: var(--fs-xs);
+            color: var(--text-faint);
+        }
+    }
+}
