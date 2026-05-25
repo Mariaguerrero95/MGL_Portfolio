@@ -96,7 +96,7 @@ const en = {
             available: 'Available for new projects',
             location: 'Based in Spain',
             timezone: 'CET (UTC+1)',
-            email: 'hello@mariaguerrerolobo.com',
+            email: 'mariaguerrero1995@outlook.es',
         },
         availability: { kicker: 'AVAILABLE FOR', items: ['Remote opportunities', 'Worldwide'] },
         form: {
@@ -266,7 +266,7 @@ const es = {
             available: 'Disponible para nuevos proyectos',
             location: 'En España',
             timezone: 'CET (UTC+1)',
-            email: 'hello@mariaguerrerolobo.com',
+            email: 'mariaguerrero1995@outlook.es',
         },
         availability: { kicker: 'DISPONIBLE PARA', items: ['Oportunidades remotas', 'Cualquier país'] },
         form: {

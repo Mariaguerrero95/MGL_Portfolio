@@ -63,6 +63,15 @@
 
     &__availability {
         margin-top: var(--space-3);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        align-items: flex-start;
+
+        .section-label:last-child {
+            font-weight: 300;
+            margin-left: var(--space-4);
+        }
     }
 
     // ----- VISUAL / ORBIT -----

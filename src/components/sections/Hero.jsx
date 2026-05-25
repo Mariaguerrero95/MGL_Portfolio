@@ -68,19 +68,8 @@ export default function Hero() {
                     </motion.p>
 
                     <motion.div
-                        className="hero__locale glass"
-                        custom={5} variants={fadeUp} initial="initial" animate="animate"
-                    >
-                        <span className="dot" />
-                        <div>
-                            <p>{t('common.basedIn')}</p>
-                            <p className="text-muted">{t('common.workingRemotely')}</p>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
                         className="hero__ctas"
-                        custom={6} variants={fadeUp} initial="initial" animate="animate"
+                        custom={5} variants={fadeUp} initial="initial" animate="animate"
                     >
                         <MagneticButton as="a" href="#work" className="btn btn--primary">
                             {t('hero.cta.primary')}
@@ -93,9 +82,10 @@ export default function Hero() {
 
                     <motion.div
                         className="hero__availability"
-                        custom={7} variants={fadeUp} initial="initial" animate="animate"
+                        custom={6} variants={fadeUp} initial="initial" animate="animate"
                     >
                         <SectionLabel>{t('common.availableForNewProjects')}</SectionLabel>
+                        <SectionLabel className="section-label--no-dot">{t('common.basedIn')} · {t('common.workingRemotely')}</SectionLabel>
                     </motion.div>
                 </div>
 

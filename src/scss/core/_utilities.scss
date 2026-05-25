@@ -42,6 +42,7 @@
     }
 
     &--accent &__dot { background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
+    &--no-dot &__dot { display: none; }
 }
 
 .magnet {

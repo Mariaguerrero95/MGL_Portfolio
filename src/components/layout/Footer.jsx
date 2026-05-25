@@ -32,9 +32,9 @@ export default function Footer() {
                 <div className="site-footer__col">
                     <p className="eyebrow">{t('footer.more')}</p>
                     <ul>
-                        <li><a href="https://github.com/MeriG28" target="_blank" rel="noreferrer">{t('footer.links.github')}</a></li>
-                        <li><a href="https://www.linkedin.com/in/maria-guerrero-lobo/" target="_blank" rel="noreferrer">{t('footer.links.linkedin')}</a></li>
-                        <li><a href="mailto:meri.globo@gmail.com">{t('footer.links.email')}</a></li>
+                        <li><a href="https://github.com/Mariaguerrero95" target="_blank" rel="noreferrer">{t('footer.links.github')}</a></li>
+                        <li><a href="https://www.linkedin.com/in/mariaguerrero-developer/" target="_blank" rel="noreferrer">{t('footer.links.linkedin')}</a></li>
+                        <li><a href="mailto:mariaguerrero1995@outlook.es">{t('footer.links.email')}</a></li>
                         <li><Link to="/playground">Playground</Link></li>
                     </ul>
                 </div>

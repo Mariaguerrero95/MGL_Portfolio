@@ -78,13 +78,13 @@ export default function ContactCTA() {
                         </ul>
 
                         <div className="contact-form__socials">
-                            <a href="https://github.com/" aria-label="GitHub" target="_blank" rel="noreferrer" data-cursor="magnet">
+                            <a href="https://github.com/Mariaguerrero95" aria-label="GitHub" target="_blank" rel="noreferrer" data-cursor="magnet">
                                 <TbBrandGithub />
                             </a>
-                            <a href="https://linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noreferrer" data-cursor="magnet">
+                            <a href="https://www.linkedin.com/in/mariaguerrero-developer/" aria-label="LinkedIn" target="_blank" rel="noreferrer" data-cursor="magnet">
                                 <TbBrandLinkedin />
                             </a>
-                            <a href="mailto:hello@mariaguerrerolobo.com" aria-label="Email" data-cursor="magnet">
+                            <a href="mailto:mariaguerrero1995@outlook.es" aria-label="Email" data-cursor="magnet">
                                 <TbMail />
                             </a>
                         </div>
