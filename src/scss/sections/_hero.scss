@@ -158,7 +158,7 @@
         padding-bottom: var(--space-6);
 
         &__grid {
-            grid-template-columns: 1fr 160px; /* text + slightly larger photo */
+            grid-template-columns: 1fr 200px; /* text + larger photo */
             gap: var(--space-5);
             align-items: start; /* align visual to the top of the text */
         }
@@ -170,11 +170,11 @@
 
         &__visual {
             justify-self: end;
-            max-width: 160px;
+            max-width: 200px;
             width: 100%;
             aspect-ratio: 1 / 1;
             margin-inline: 0;
-            transform: translateX(-8%); /* shift photo slightly left towards text */
+            transform: translateX(-20%); /* shift photo more left towards text */
             translate: none; /* disable orbit translation on mobile layout */
         }
 
