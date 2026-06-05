@@ -16,7 +16,13 @@ export default function Hero() {
         const el = orbitRef.current;
         if (!el) return;
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reduce) return;
+        const isTablet = window.matchMedia('(min-width: 768px) and (max-width: 1024px)').matches;
+        if (reduce || isTablet) {
+            // Disable parallax movement on tablet and reduced-motion preferences
+            el.style.setProperty('--ox', '0px');
+            el.style.setProperty('--oy', '0px');
+            return;
+        }
 
         const onMove = (e) => {
             const cx = window.innerWidth / 2;

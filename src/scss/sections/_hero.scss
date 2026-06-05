@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    padding-top: calc(var(--header-h) + 64px);
+    padding-top: calc(var(--header-h) + 32px);
     padding-bottom: var(--space-9);
     overflow: hidden;
 
@@ -16,6 +16,79 @@
         opacity: 0.85;
     }
 
+    @media (min-width: 1440px) {
+        /* Make the landing fill the viewport on desktop so other sections are not visible on first load */
+        /* Reduce vertical offset so content sits closer to the header */
+        min-height: calc(100vh - var(--header-h) - 80px);
+        padding-top: calc(var(--header-h) + 8px);
+        padding-bottom: 0;
+
+        &__grid {
+            min-height: calc(100vh - var(--header-h) - 80px);
+            align-items: start; /* align grid content to top so landing sits closer to header */
+            /* Make columns tighter and center the whole grid so copy and visual are closer */
+            grid-template-columns: minmax(420px, 1fr) 440px;
+            justify-content: center;
+            gap: clamp(var(--space-4), 2.5vw, var(--space-6));
+        }
+
+        /* Slightly tighten visual size and center it for better balance */
+        &__visual {
+            justify-self: center;
+            margin-inline: 0;
+            /* Increase visual container so the photo can grow larger */
+            max-width: 640px;
+            width: 100%;
+        }
+
+        /* Increase only the photo size on wide desktop screens */
+        &__photo {
+            /* make the photo occupy most of the visual container */
+            width: 92%;
+            max-width: none;
+        }
+
+        /* Keep copy comfortably wide but centered vertically */
+        &__copy {
+            justify-self: center;
+            /* Increase max width so the text can expand across the landing */
+            max-width: 920px;
+        }
+
+        /* Increase typographic scale for desktop landing (much larger) */
+        &__copy {
+            .kicker { font-size: calc(var(--fs-sm) * 1.6); letter-spacing: 0.08em; }
+        }
+
+        &__title {
+            /* Make the hero title much larger on wide desktop screens */
+            font-size: calc(var(--fs-display) * 2.0);
+            line-height: 1.02;
+            letter-spacing: -0.03em;
+        }
+
+        /* Emphasis (serif) inside title keep proportional but slightly larger */
+        &__title em { font-size: 1.06em; }
+
+        &__desc {
+            font-size: calc(var(--fs-lg) * 1.4);
+            max-width: 820px;
+        }
+
+        &__ctas {
+            gap: 18px;
+            .btn {
+                font-size: calc(var(--fs-md) * 1.35);
+                padding: 16px 26px;
+                border-radius: 12px;
+            }
+        }
+
+        &__availability {
+            .section-label { font-size: calc(var(--fs-sm) * 1.2); }
+        }
+    }
+
     &__grid {
         position: relative;
         display: grid;
@@ -26,6 +99,12 @@
         @media (max-width: 1024px) {
             grid-template-columns: 1fr;
             gap: var(--space-8);
+        }
+        // Tablet specific: keep two columns on tablet (image to the right)
+        @media (min-width: 768px) and (max-width: 1024px) {
+            grid-template-columns: 1fr 520px;
+            gap: var(--space-6);
+            align-items: center;
         }
     }
 
@@ -45,6 +124,71 @@
 
         span { display: block; }
         em { font-family: var(--font-serif); font-style: italic; color: var(--accent); font-weight: 400; }
+    }
+
+    // Make headings slightly smaller on tablet so the landing fits on initial view
+    @media (min-width: 768px) and (max-width: 1024px) {
+        /* Pull the hero content closer to the header so the landing fits in initial viewport */
+        padding-top: calc(var(--header-h) + 8px);
+        padding-bottom: var(--space-7);
+
+        /* Slightly tighter grid and smaller visual so it doesn't push content down */
+        &__grid {
+            grid-template-columns: 1fr 440px;
+            gap: var(--space-5);
+        }
+
+        &__title {
+            /* Reduce title size a bit more on tablet */
+            font-size: clamp(1.6rem, 3.2vw + 0.4rem, 3rem);
+            line-height: 1.04;
+        }
+
+        &__visual {
+            margin-inline: 0;
+            justify-self: end;
+            max-width: 420px;
+            width: 100%;
+        }
+    }
+
+    /* Mobile: show photo to the right of the main copy and reduce its size */
+    @media (max-width: 767px) {
+        padding-top: calc(var(--header-h) + 16px);
+        padding-bottom: var(--space-6);
+
+        &__grid {
+            grid-template-columns: 1fr 160px; /* text + slightly larger photo */
+            gap: var(--space-5);
+            align-items: start; /* align visual to the top of the text */
+        }
+
+        &__title {
+            font-size: clamp(1.6rem, 6vw, 2.4rem);
+            line-height: 1.06;
+        }
+
+        &__visual {
+            justify-self: end;
+            max-width: 160px;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            margin-inline: 0;
+            transform: translateX(-8%); /* shift photo slightly left towards text */
+            translate: none; /* disable orbit translation on mobile layout */
+        }
+
+        &__photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg), 0 0 40px var(--accent-glow);
+        }
+
+        &__desc {
+            max-width: none; /* let description flow full column width on mobile */
+        }
     }
 
     &__desc {
@@ -215,5 +359,18 @@
         p { font-size: var(--fs-xs); line-height: 1.3; }
 
         @media (max-width: 1024px) { position: static; margin: var(--space-5) auto 0; }
+    }
+}
+
+/* Override: ensure photo and visual container grow on wide desktop viewports
+   This block is placed after the main `.hero` rules so it wins in the cascade. */
+@media (min-width: 1440px) {
+    .hero .hero__visual {
+        max-width: 600px;
+    }
+
+    .hero .hero__photo {
+        width: 100%;
+        max-width: none;
     }
 }
