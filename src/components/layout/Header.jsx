@@ -89,9 +89,7 @@ export default function Header() {
                         </AnimatePresence>
                     </button>
 
-                    <div className="site-header__avatar" aria-hidden="true">
-                        <img src="./Fotocv.jpg" alt="" />
-                    </div>
+                    {/* avatar removed: photo icon next to theme toggle removed per request */}
 
                     <button
                         type="button"
