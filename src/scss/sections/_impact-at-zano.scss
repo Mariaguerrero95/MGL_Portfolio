@@ -1,0 +1,356 @@
+// Impact at Zano section styles
+
+.impact-at-zano {
+  padding: 48px 0 32px;
+
+  .impact-at-zano__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .impact-at-zano__intro {
+    .kicker {
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4.6vw, 48px);
+      margin: 8px 0 12px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    p {
+      max-width: 56ch;
+      color: var(--text-muted);
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      line-height: 1.6;
+    }
+  }
+
+  .impact-at-zano__card {
+    background: var(--surface-card);
+    border: 1px solid var(--border-card);
+    border-radius: 14px;
+    padding: clamp(18px, 3.2vw, 28px);
+    box-shadow: 0 8px 24px rgba(20, 16, 24, 0.06);
+    transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
+                box-shadow 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .impact-at-zano__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(20, 16, 24, 0.12);
+  }
+
+  .impact-at-zano__card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .impact-at-zano__meta-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .impact-at-zano__left-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .impact-at-zano__meta-sep {
+    width: 1px;
+    background: var(--border-card);
+    border-radius: 1px;
+    height: 48px;
+    margin-top: 2px;
+  }
+
+  .impact-at-zano__meta-mid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: flex-start;
+  }
+
+  .impact-at-zano__dates {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--surface-card-text, #111);
+  }
+
+  .impact-at-zano__dates svg {
+    color: var(--text-muted);
+    flex: 0 0 auto;
+  }
+
+  .impact-at-zano__company {
+    font-weight: 700;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--surface-card-text, #000);
+  }
+
+  .impact-at-zano__role,
+  .impact-at-zano__location {
+    font-size: clamp(0.88rem, 0.95vw, 0.98rem);
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .impact-at-zano__role {
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .impact-at-zano__card-excerpt {
+    margin: 0;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .impact-at-zano__skills-card {
+    margin-top: clamp(28px, 5vw, 40px);
+    background: var(--surface-card);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+
+  .impact-skill {
+    padding: clamp(16px, 3vw, 28px);
+    display: flex;
+    gap: clamp(14px, 2vw, 20px);
+    align-items: flex-start;
+    transition: transform 0.28s var(--ease-out), box-shadow 0.28s var(--ease-out), background-color 0.2s ease;
+    border-bottom: 1px solid var(--border-card);
+    will-change: transform;
+  }
+
+  .impact-skill:last-child {
+    border-bottom: none;
+  }
+
+  .impact-skill:hover,
+  .impact-skill:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(11, 23, 41, 0.08);
+    background-color: rgba(168, 164, 255, 0.035);
+  }
+
+  .impact-skill__icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), rgba(168, 164, 255, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.28s var(--ease-out), box-shadow 0.28s var(--ease-out);
+    box-shadow: 0 6px 18px rgba(11, 23, 41, 0.04) inset;
+  }
+
+  .impact-skill__icon img {
+    width: 26px;
+    height: 26px;
+    transition: transform 0.28s var(--ease-out);
+    filter: brightness(0) invert(1);
+  }
+
+  .impact-skill:hover .impact-skill__icon,
+  .impact-skill:focus-within .impact-skill__icon {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 10px 24px rgba(11, 23, 41, 0.08);
+  }
+
+  .impact-skill__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .impact-skill h4 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .impact-skill p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 640px) {
+    .impact-at-zano__top {
+      grid-template-columns: 1fr 520px;
+      gap: 32px;
+    }
+
+    .impact-at-zano__card {
+      grid-column: 2 / 3;
+      padding: 28px 28px;
+      max-width: 520px;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .impact-at-zano__top {
+      grid-template-columns: 1fr 520px;
+      gap: 32px;
+    }
+
+    .impact-at-zano__card {
+      grid-column: 2 / 3;
+      padding: 28px 28px;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .impact-at-zano__skills-card {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 64px 0 48px;
+
+    .impact-at-zano__skills-card {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .impact-skill {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: clamp(20px, 3vw, 32px);
+    }
+
+    .impact-skill__icon {
+      margin-bottom: 10px;
+    }
+
+    .impact-at-zano__card-top {
+      margin-bottom: 12px;
+    }
+
+    .impact-at-zano__card-meta {
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding: 72px 0 56px;
+
+    .impact-at-zano__skills-card {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .impact-at-zano__skills-card .impact-skill {
+      border-right: 1px solid var(--border-card);
+    }
+
+    .impact-at-zano__skills-card .impact-skill:nth-child(5n) {
+      border-right: none;
+    }
+  }
+  @media (max-width: 1023px) {
+    /* Mobile / small tablet: grid-auto-columns + horizontal scroll to avoid clipping */
+
+    /* ensure parent wrappers don't clip the horizontal scroller */
+    .impact-at-zano,
+    .impact-at-zano .container {
+      overflow: visible;
+    }
+
+    .impact-at-zano__skills-card {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(120px, 1fr);
+      gap: 12px;
+      padding: 12px 8px 12px 8px;
+      padding-inline-end: 18px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .impact-at-zano__skills-card::-webkit-scrollbar { display: none; }
+
+    .impact-skill {
+      padding: clamp(12px, 3vw, 16px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-bottom: none;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .impact-skill__content { position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal; border: 0; }
+
+    /* Keep titles visible, hide descriptive paragraph visually */
+    .impact-skill__content p { display: none; }
+
+    .impact-skill__icon { width: 64px; height: 64px; min-width: 64px; margin: 0 auto 6px; overflow: visible; }
+    .impact-skill__icon img { width: 28px; height: 28px; }
+  }
+
+  /* Very small screens: show 3 columns x 2 rows (mobile) and reduce icon sizes */
+  @media (max-width: 480px) {
+    .impact-at-zano__skills-card {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      grid-auto-flow: row !important;
+      grid-auto-rows: auto;
+      gap: 12px;
+      padding: 10px 12px;
+      overflow-x: visible !important;
+      overflow-y: visible !important;
+    }
+
+    .impact-skill {
+      min-width: auto !important;
+      width: 100% !important;
+      padding: 8px 10px !important;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .impact-skill__icon {
+      width: 48px !important;
+      height: 48px !important;
+      min-width: 48px !important;
+      margin-bottom: 8px !important;
+      overflow: visible !important;
+    }
+
+    .impact-skill__icon img { width: 22px !important; height: 22px !important; }
+  }
+}
