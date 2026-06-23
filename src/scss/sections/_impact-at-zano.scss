@@ -322,25 +322,25 @@
   /* Very small screens: show 3 columns x 2 rows (mobile) and reduce icon sizes */
   @media (max-width: 480px) {
     .impact-at-zano__skills-card {
-      /* Force single-row compact layout */
-      display: flex !important;
-      flex-wrap: nowrap !important;
+      /* compact single-row layout without !important */
+      display: flex;
+      flex-wrap: nowrap;
       gap: 8px;
       padding: 8px 10px;
       overflow-x: auto;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      justify-content: space-between;
+      align-items: center;
     }
 
     .impact-at-zano__skills-card::-webkit-scrollbar { display: none; }
 
     .impact-skill {
-      flex: 0 0 auto !important;
-      min-width: 56px !important;
-      padding: 6px 8px !important;
-      width: auto !important;
+      flex: 0 0 auto;
+      min-width: 52px;
+      padding: 6px 8px;
+      width: auto;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -350,25 +350,27 @@
     }
 
     .impact-skill__icon {
-      width: 40px !important;
-      height: 40px !important;
-      min-width: 40px !important;
-      margin-bottom: 4px !important;
-      overflow: visible !important;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      margin-bottom: 4px;
+      overflow: visible;
     }
 
-    .impact-skill__icon img { width: 18px !important; height: 18px !important; }
+    .impact-skill__icon img { width: 16px; height: 16px; }
 
+    /* Allow titles to wrap and be visible; no ellipsis */
     .impact-skill h4 {
-      font-size: 0.8rem !important;
-      line-height: 1.1 !important;
-      white-space: nowrap !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-      max-width: 56px !important;
+      font-size: 0.9rem;
+      line-height: 1.15;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+      max-width: none;
       margin: 0;
+      text-align: center;
     }
 
-    .impact-skill__content p { display: none !important; }
+    .impact-skill__content p { display: none; }
   }
 }
