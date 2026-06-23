@@ -322,35 +322,53 @@
   /* Very small screens: show 3 columns x 2 rows (mobile) and reduce icon sizes */
   @media (max-width: 480px) {
     .impact-at-zano__skills-card {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
-      grid-auto-flow: row !important;
-      grid-auto-rows: auto;
-      gap: 12px;
-      padding: 10px 12px;
-      overflow-x: visible !important;
-      overflow-y: visible !important;
+      /* Force single-row compact layout */
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      gap: 8px;
+      padding: 8px 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      justify-content: space-between;
     }
 
+    .impact-at-zano__skills-card::-webkit-scrollbar { display: none; }
+
     .impact-skill {
-      min-width: auto !important;
-      width: 100% !important;
-      padding: 8px 10px !important;
+      flex: 0 0 auto !important;
+      min-width: 56px !important;
+      padding: 6px 8px !important;
+      width: auto !important;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 6px;
     }
 
     .impact-skill__icon {
-      width: 48px !important;
-      height: 48px !important;
-      min-width: 48px !important;
-      margin-bottom: 8px !important;
+      width: 40px !important;
+      height: 40px !important;
+      min-width: 40px !important;
+      margin-bottom: 4px !important;
       overflow: visible !important;
     }
 
-    .impact-skill__icon img { width: 22px !important; height: 22px !important; }
+    .impact-skill__icon img { width: 18px !important; height: 18px !important; }
+
+    .impact-skill h4 {
+      font-size: 0.8rem !important;
+      line-height: 1.1 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      max-width: 56px !important;
+      margin: 0;
+    }
+
+    .impact-skill__content p { display: none !important; }
   }
 }
