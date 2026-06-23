@@ -364,11 +364,13 @@
       font-size: 0.9rem;
       line-height: 1.15;
       white-space: normal;
-      overflow: visible;
-      text-overflow: unset;
-      max-width: none;
       margin: 0;
       text-align: center;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* show up to 2 lines */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .impact-skill__content p { display: none; }
