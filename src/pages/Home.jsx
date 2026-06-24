@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion';
 import Hero from '../components/sections/Hero.jsx';
-import FeaturedCaseStudies from '../components/sections/FeaturedCaseStudies.jsx';
-import SkillsTabs from '../components/sections/SkillsTabs.jsx';
+import ImpactAtZano from '../components/sections/ImpactAtZano.jsx';
+import ZanoSelectedWork from '../components/sections/ZanoSelectedWork.jsx';
+import ProductPhilosophy from '../components/sections/ProductPhilosophy.jsx';
+import BeyondTheCode from '../components/sections/BeyondTheCode.jsx';
+import TechMarqueeRefined from '../components/sections/TechMarqueeRefined.jsx';
 import Experience from '../components/sections/Experience.jsx';
 import About from '../components/sections/About.jsx';
-import Testimonials from '../components/sections/Testimonials.jsx';
+import TestimonialsGrid from '../components/sections/TestimonialsGrid.jsx';
+import ContactFormEditorial from '../components/sections/ContactFormEditorial.jsx';
 
 export default function Home() {
     return (
@@ -15,11 +19,15 @@ export default function Home() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
             <Hero />
-            <FeaturedCaseStudies />
-            <SkillsTabs />
+            <ImpactAtZano />
+            <ZanoSelectedWork />
+            <ProductPhilosophy />
+            <BeyondTheCode />
+            <TechMarqueeRefined />
             <Experience />
             <About />
-            <Testimonials />
+            <TestimonialsGrid />
+            <ContactFormEditorial />
         </motion.div>
     );
 }
