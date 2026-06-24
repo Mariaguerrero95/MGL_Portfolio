@@ -23,8 +23,8 @@ export default function Home() {
             <ZanoSelectedWork />
             <ProductPhilosophy />
             <BeyondTheCode />
-            <TechMarqueeRefined />
             <Experience />
+            <TechMarqueeRefined />
             <About />
             <TestimonialsGrid />
             <ContactFormEditorial />
