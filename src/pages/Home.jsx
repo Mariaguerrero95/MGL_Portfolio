@@ -21,9 +21,9 @@ export default function Home() {
             <Hero />
             <ImpactAtZano />
             <ZanoSelectedWork />
+            <Experience />
             <ProductPhilosophy />
             <BeyondTheCode />
-            <Experience />
             <TechMarqueeRefined />
             <About />
             <TestimonialsGrid />

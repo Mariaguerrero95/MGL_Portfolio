@@ -16,6 +16,135 @@
         }
     }
 
+    /* Desktop: show compact cards in a 2-column grid instead of vertical timeline */
+    @media (min-width: 1024px) {
+        &__timeline {
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-6);
+        }
+
+        &__item { position: static; padding-bottom: 0; }
+        &__dot { left: 0; position: relative; width: 40px; height: 40px; margin-bottom: 0; }
+        &::before { display: none; }
+    }
+
+        /* Company featured card (Zano) */
+        &__company {
+            margin-top: var(--space-6);
+
+            .company-card {
+                display: grid;
+                grid-template-columns: 1fr 420px;
+                gap: var(--space-6);
+                background: var(--surface-card);
+                border: 1px solid var(--border-card);
+                border-radius: var(--radius-2xl);
+                padding: var(--space-6);
+                color: var(--surface-card-text);
+                box-shadow: var(--shadow-card);
+
+                p,
+                li {
+                    color: var(--surface-card-muted);
+                }
+
+                &__media img { width: 100%; height: auto; border-radius: calc(var(--radius-lg)); }
+
+                &__content h3 { margin: 0 0 8px; font-size: var(--fs-h3); color: var(--surface-card-text); }
+
+                &__highlights { margin-top: var(--space-4); display: grid; gap: 8px; }
+
+                &__links { margin-top: var(--space-4); display:flex; gap: 8px; flex-wrap:wrap; }
+
+                @media (max-width: 1024px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+
+    /* Featured premium card (Zano) */
+    &__featured {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: var(--space-6);
+        align-items: center;
+        background: var(--cream);
+        border-radius: var(--radius-2xl);
+        border: 1px solid var(--canvas-lavender);
+        padding: calc(var(--space-6) + 4px);
+        box-shadow: var(--shadow-glow), 0 12px 40px rgba(10,10,10,0.06);
+        margin: var(--space-6) 0;
+        overflow: hidden;
+
+        .featured__media { display:flex; align-items:center; justify-content:center; }
+        .featured__logo img { width: 160px; height: auto; border-radius: 12px; display:block; object-fit:contain; }
+
+        .featured__content { padding-right: var(--space-4); }
+        .featured__header { display:flex; gap: var(--space-4); align-items:baseline; }
+        .featured__company { font-size: var(--fs-h3); margin:0; color: var(--text-strong); }
+        .featured__role { font-weight:600; color: var(--accent); margin-left: auto; }
+
+        .featured__badge {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 10px 16px;
+            background: linear-gradient(90deg, var(--canvas-lavender), rgba(255,255,255,0));
+            color: var(--text-strong);
+            border-radius: 12px;
+            font-weight:800;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 30px var(--ambient-glow);
+            border: 1px solid var(--border-accent);
+        }
+
+        .featured__summary { margin-top: var(--space-3); color: var(--surface-card-muted); }
+
+        .featured__chips { display:flex; gap: 8px; flex-wrap:wrap; margin-top: var(--space-4); }
+        .chip {
+            background: transparent;
+            border: 1px solid rgba(42,47,143,0.06);
+            padding: 8px 10px;
+            border-radius: 999px;
+            font-size: var(--fs-xs);
+            color: var(--text-strong);
+            background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.02));
+            box-shadow: 0 6px 18px rgba(42,47,143,0.04), 0 0 28px var(--ambient-glow);
+        }
+
+        .featured__metrics { display:flex; gap: 10px; margin-top: 12px; }
+        .metric { display:inline-flex; flex-direction:column; align-items:flex-start; padding: 8px 12px; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid rgba(42,47,143,0.06); }
+        .metric strong { font-size: 0.95rem; color: var(--text-strong); }
+        .metric small { font-size: 0.8rem; color: var(--surface-card-muted); margin-top: 2px; }
+
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            .featured__logo img { width: 220px; }
+            .featured__content { text-align: left; }
+            .featured__badge { margin-left: 0; }
+        }
+    }
+
+    /* Compact timeline cards (non-featured) */
+    .experience__card {
+        background: var(--surface-card);
+        border: 1px solid var(--border-card);
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
+    }
+    .experience__card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+
+    @media (max-width: 768px) {
+        .experience__timeline { padding-left: 20px; }
+        .experience__dot { left: -36px; width: 34px; height: 34px; }
+        .experience__featured { padding: var(--space-5); grid-template-columns: 1fr; }
+        .featured__logo img { width: 140px; }
+        .featured__company { font-size: var(--fs-h4); }
+    }
+
     &__item {
         position: relative;
         padding-bottom: var(--space-6);
@@ -24,20 +153,8 @@
     }
 
     &__dot {
-        position: absolute;
-        left: -48px;
-        top: 16px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: var(--surface);
-        border: 1px solid var(--border-accent);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--accent);
-        box-shadow: var(--shadow-sm), 0 0 18px var(--accent-glow);
-        z-index: 1;
+        /* dot removed for premium timeline layout */
+        display: none;
     }
 
     &__period {
