@@ -1,8 +1,24 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { scrollToSection } from '../../lib/smooth-scroll.js';
 
 export default function Footer() {
     const { t } = useTranslation();
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleSectionLink = (event, id) => {
+        event.preventDefault();
+        const scroll = () => requestAnimationFrame(() => scrollToSection(id));
+
+        if (location.pathname !== '/') {
+            navigate('/');
+            window.setTimeout(scroll, 80);
+            return;
+        }
+
+        scroll();
+    };
 
     return (
         <footer className="site-footer">
@@ -20,11 +36,11 @@ export default function Footer() {
                 <div className="site-footer__col">
                     <p className="eyebrow">{t('footer.navigation')}</p>
                     <ul>
-                        <li><a href="/#work">{t('header.work')}</a></li>
-                        <li><a href="/#experience">{t('header.experience')}</a></li>
-                        <li><a href="/#skills">{t('header.skills')}</a></li>
-                        <li><a href="/#about">{t('header.about')}</a></li>
-                        <li><a href="/#testimonials">{t('header.testimonials')}</a></li>
+                        <li><a href="/#work" onClick={(event) => handleSectionLink(event, 'work')}>{t('header.work')}</a></li>
+                        <li><a href="/#experience" onClick={(event) => handleSectionLink(event, 'experience')}>{t('header.experience')}</a></li>
+                        <li><a href="/#skills" onClick={(event) => handleSectionLink(event, 'skills')}>{t('header.skills')}</a></li>
+                        
+                        <li><a href="/#testimonials" onClick={(event) => handleSectionLink(event, 'testimonials')}>{t('header.testimonials')}</a></li>
                         <li><Link to="/contact">{t('header.contact')}</Link></li>
                     </ul>
                 </div>

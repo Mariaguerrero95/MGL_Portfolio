@@ -75,7 +75,6 @@
     height: 48px;
     margin-top: 2px;
   }
-
   .impact-at-zano__meta-mid {
     display: flex;
     flex-direction: column;
@@ -130,6 +129,12 @@
     display: grid;
     grid-template-columns: 1fr;
     overflow: hidden;
+  }
+
+  /* Reset any explicit positioning from previous media queries (nth-child placements) */
+  .impact-at-zano .impact-skill {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .impact-skill {
@@ -201,28 +206,28 @@
 
   @media (min-width: 640px) {
     .impact-at-zano__top {
-      grid-template-columns: 1fr 520px;
+      grid-template-columns: 1fr 640px;
       gap: 32px;
     }
 
     .impact-at-zano__card {
       grid-column: 2 / 3;
       padding: 28px 28px;
-      max-width: 520px;
+      max-width: 640px;
       width: 100%;
     }
   }
 
   @media (min-width: 768px) {
     .impact-at-zano__top {
-      grid-template-columns: 1fr 520px;
+      grid-template-columns: 1fr 640px;
       gap: 32px;
     }
 
     .impact-at-zano__card {
       grid-column: 2 / 3;
       padding: 28px 28px;
-      max-width: 520px;
+      max-width: 640px;
       width: 100%;
     }
 
@@ -257,6 +262,9 @@
       align-items: flex-start;
       gap: 8px;
     }
+
+    /* Ensure the mobile/tablet-only revealed panel doesn't appear on desktop */
+    .impact-at-zano__skill-panel { display: none; }
   }
 
   @media (min-width: 1200px) {
@@ -314,65 +322,298 @@
 
     /* Keep titles visible, hide descriptive paragraph visually */
     .impact-skill__content p { display: none; }
+    .impact-skill h4 { display: none; }
 
     .impact-skill__icon { width: 64px; height: 64px; min-width: 64px; margin: 0 auto 6px; overflow: visible; }
     .impact-skill__icon img { width: 28px; height: 28px; }
   }
 
-  /* Very small screens: show 3 columns x 2 rows (mobile) and reduce icon sizes */
-  @media (max-width: 480px) {
+  /* Mobile-specific: replace horizontal scroller with centered 2/1/2 grid and revealed panel */
+  @media (max-width: 767px) {
     .impact-at-zano__skills-card {
-      /* compact single-row layout without !important */
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 8px;
-      padding: 8px 10px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      align-items: center;
+      /* disable horizontal scrolling and use an explicit grid */
+      overflow: visible;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(56px, 96px));
+      grid-auto-rows: auto;
+      justify-content: center;
+      gap: 14px 22px;
+      padding: 18px 12px;
     }
 
-    .impact-at-zano__skills-card::-webkit-scrollbar { display: none; }
+    .impact-skill {
+      /* ensure each button centers itself in its grid cell */
+      min-width: 56px;
+      padding: 8px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom: none;
+      border-right: none;
+    }
+
+    .impact-skill { justify-self: center; }
+
+    /* Position the five items in a 3-column grid to create 2 / 1 / 2 layout */
+    .impact-skill:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .impact-skill:nth-child(2) { grid-column: 3; grid-row: 1; }
+    .impact-skill:nth-child(3) { grid-column: 2; grid-row: 2; }
+    .impact-skill:nth-child(4) { grid-column: 1; grid-row: 3; }
+    .impact-skill:nth-child(5) { grid-column: 3; grid-row: 3; }
+
+    .impact-skill__icon {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      margin: 0 auto 6px;
+    }
+
+    .impact-skill__icon img { width: 28px; height: 28px; }
+
+    .impact-skill__content p { display: none; }
+
+    /* revealed panel styling */
+    .impact-at-zano__skill-panel {
+      margin-top: 14px;
+      background: var(--cream);
+      border: 1px solid rgba(20,16,24,0.06);
+      box-shadow: 0 12px 30px rgba(11,23,41,0.06);
+      border-radius: 20px;
+      padding: 16px 18px;
+      color: var(--surface-card-text, #111);
+    }
+
+    .impact-at-zano__skill-panel h4 { margin: 0 0 6px; font-size: 1rem; }
+    .impact-at-zano__skill-panel p { margin: 0; color: var(--text-muted); line-height: 1.5; }
+  }
+
+  /* Tablet: apply same compact selector as mobile (disable horizontal scroll, hide titles) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .impact-at-zano__skills-card {
+      overflow: visible;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(56px, 96px));
+      grid-auto-rows: auto;
+      justify-content: center;
+      gap: 14px 22px;
+      padding: 18px 12px;
+    }
 
     .impact-skill {
-      flex: 0 0 auto;
-      min-width: 52px;
-      padding: 6px 8px;
-      width: auto;
-      box-sizing: border-box;
+      min-width: 56px;
+      padding: 8px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom: none;
+      border-right: none;
+    }
+
+    .impact-skill { justify-self: center; }
+
+    .impact-skill:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .impact-skill:nth-child(2) { grid-column: 3; grid-row: 1; }
+    .impact-skill:nth-child(3) { grid-column: 2; grid-row: 2; }
+    .impact-skill:nth-child(4) { grid-column: 1; grid-row: 3; }
+    .impact-skill:nth-child(5) { grid-column: 3; grid-row: 3; }
+
+    .impact-skill__icon {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      margin: 0 auto 6px;
+    }
+
+    .impact-skill__icon img { width: 28px; height: 28px; }
+
+    .impact-skill__content p { display: none; }
+    .impact-skill h4 { display: none; }
+
+    .impact-at-zano__skill-panel {
+      margin-top: 14px;
+      background: var(--cream);
+      border: 1px solid rgba(20,16,24,0.06);
+      box-shadow: 0 12px 30px rgba(11,23,41,0.06);
+      border-radius: 20px;
+      padding: 16px 18px;
+      color: var(--surface-card-text, #111);
+    }
+
+    .impact-at-zano__skill-panel h4 { margin: 0 0 6px; font-size: 1rem; }
+    .impact-at-zano__skill-panel p { margin: 0; color: var(--text-muted); line-height: 1.5; }
+  }
+
+  /* Very small screens: keep grid layout, hide titles and avoid horizontal scroll */
+  @media (max-width: 480px) {
+    .impact-at-zano__skills-card {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(56px, 88px));
+      grid-auto-rows: auto;
+      justify-content: center;
+      gap: 10px 16px;
+      padding: 12px 10px;
+      overflow: visible;
+    }
+
+    .impact-skill {
+      min-width: 56px;
+      padding: 6px 6px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      border-bottom: none;
     }
 
     .impact-skill__icon {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
       margin-bottom: 4px;
       overflow: visible;
     }
 
-    .impact-skill__icon img { width: 16px; height: 16px; }
+    .impact-skill__icon img { width: 24px; height: 24px; }
 
-    /* Allow titles to wrap and be visible; no ellipsis */
-    .impact-skill h4 {
-      font-size: 0.9rem;
-      line-height: 1.15;
-      white-space: normal;
-      margin: 0;
-      text-align: center;
-      display: -webkit-box;
-      -webkit-line-clamp: 2; /* show up to 2 lines */
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
+    /* Hide titles on very small screens and keep descriptions hidden */
+    .impact-skill h4 { display: none; }
     .impact-skill__content p { display: none; }
+  }
+}
+
+/* Override final: forzar una única fila de iconos y reducir su tamaño en tablet y mobile
+   Esta regla usa selectores finales para anular las reglas previas que colocan
+   los elementos con nth-child. */
+@media (max-width: 1023px) {
+  .impact-at-zano .impact-at-zano__skills-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+  }
+
+  .impact-at-zano .impact-at-zano__skills-card::-webkit-scrollbar { display: none; }
+
+  .impact-at-zano .impact-skill {
+    flex: 0 0 auto;
+    min-width: auto;
+    width: auto;
+    padding: 8px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: none;
+    text-align: center;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Iconos más pequeños */
+  .impact-at-zano .impact-skill__icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    margin: 0 auto 6px;
+  }
+
+  .impact-at-zano .impact-skill__icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Mantener textos ocultos si las reglas previas lo hacían */
+  .impact-at-zano .impact-skill h4,
+  .impact-at-zano .impact-skill__content p { display: none; }
+}
+
+/* Responsive final: distribuir los iconos en una fila que se ajuste al ancho
+   de la pantalla. Usa flex y flex:1 para que los items se repartan el espacio.
+   `clamp()` mantiene tamaños relativos en cada breakpoint. Placed last to win. */
+@media (max-width: 1023px) {
+  .impact-at-zano .impact-at-zano__skills-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: clamp(8px, 2vw, 20px);
+    padding: 10px clamp(12px, 4vw, 20px);
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .impact-at-zano .impact-at-zano__skills-card::-webkit-scrollbar { display: none; }
+
+  /* Cada skill ocupa espacio proporcional y se adapta al ancho */
+  .impact-at-zano .impact-skill {
+    flex: 1 1 0;
+    max-width: none;
+    min-width: 0;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    gap: 6px;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Iconos responsivos que se adaptan al ancho del dispositivo */
+  .impact-at-zano .impact-skill__icon {
+    width: clamp(32px, 8vw, 56px);
+    height: clamp(32px, 8vw, 56px);
+    min-width: auto;
+    margin: 0 auto 6px;
+  }
+
+  .impact-at-zano .impact-skill__icon img {
+    width: clamp(14px, 4vw, 28px);
+    height: clamp(14px, 4vw, 28px);
+  }
+
+  /* Ocultar texto si quieres solo iconos en la fila */
+  .impact-at-zano .impact-skill h4,
+  .impact-at-zano .impact-skill__content p { display: none; }
+}
+
+/* Mobile-specific smaller icon sizes to override the general mobile/tablet override */
+@media (max-width: 767px) {
+  .impact-at-zano .impact-skill__icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .impact-at-zano .impact-skill__icon img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-at-zano .impact-skill__icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .impact-at-zano .impact-skill__icon img {
+    width: 16px;
+    height: 16px;
   }
 }

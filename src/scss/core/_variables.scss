@@ -15,10 +15,16 @@ body.theme-dark {
     --surface: #11213A;
     --surface-2: #162A47;
     --surface-glass: rgba(17, 33, 58, 0.55);
+    --surface-card: rgba(255, 249, 239, 0.92);
+    --surface-card-strong: #FFF8EC;
+    --surface-card-text: #07111F;
+    --surface-card-muted: #4A5670;
+    --surface-card-faint: #7C8496;
 
     --border: rgba(255, 255, 255, 0.08);
     --border-strong: rgba(255, 255, 255, 0.14);
     --border-accent: rgba(168, 164, 255, 0.28);
+    --border-card: rgba(255, 255, 255, 0.48);
 
     --text: #E8ECF3;
     --text-strong: #FFFFFF;
@@ -31,6 +37,15 @@ body.theme-dark {
     --cream: #F4EDE0;
     --success: #43D18A;
 
+    --canvas-base: #07111F;
+    --canvas-warm: rgba(244, 237, 224, 0.08);
+    --canvas-lavender: rgba(168, 164, 255, 0.18);
+    --canvas-purple: rgba(107, 123, 201, 0.14);
+    --canvas-haze: rgba(244, 237, 224, 0.05);
+    --ambient-glow: rgba(168, 164, 255, 0.22);
+    --ambient-haze: rgba(168, 164, 255, 0.06);
+    --ambient-warm: rgba(244, 237, 224, 0.06);
+
     --btn-primary-bg: #0F1F38;
     --btn-primary-text: #FFFFFF;
     --btn-primary-border: rgba(255, 255, 255, 0.1);
@@ -42,6 +57,7 @@ body.theme-dark {
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
     --shadow-glow: 0 0 60px rgba(168, 164, 255, 0.18);
+    --shadow-card: 0 24px 70px rgba(0, 0, 0, 0.28), 0 0 60px rgba(168, 164, 255, 0.08);
 
     color-scheme: dark;
 }
@@ -55,10 +71,16 @@ body.theme-light {
     --surface: #FFFFFF;
     --surface-2: #F0E9DA;
     --surface-glass: rgba(255, 255, 255, 0.65);
+    --surface-card: rgba(255, 252, 246, 0.88);
+    --surface-card-strong: #FFFCF6;
+    --surface-card-text: #07111F;
+    --surface-card-muted: #4A5670;
+    --surface-card-faint: #8A95AB;
 
     --border: rgba(11, 23, 41, 0.08);
     --border-strong: rgba(11, 23, 41, 0.14);
     --border-accent: rgba(42, 47, 143, 0.28);
+    --border-card: rgba(11, 23, 41, 0.09);
 
     --text: #0B1729;
     --text-strong: #07111F;
@@ -71,6 +93,15 @@ body.theme-light {
     --cream: #F4EDE0;
     --success: #1F9B62;
 
+    --canvas-base: #F5EFE3;
+    --canvas-warm: rgba(255, 255, 255, 0.72);
+    --canvas-lavender: rgba(168, 164, 255, 0.14);
+    --canvas-purple: rgba(88, 98, 201, 0.08);
+    --canvas-haze: rgba(107, 123, 201, 0.045);
+    --ambient-glow: rgba(168, 164, 255, 0.12);
+    --ambient-haze: rgba(88, 98, 201, 0.04);
+    --ambient-warm: rgba(244, 237, 224, 0.06);
+
     --btn-primary-bg: #0B1729;
     --btn-primary-text: #FFFFFF;
     --btn-primary-border: transparent;
@@ -82,6 +113,7 @@ body.theme-light {
     --shadow-md: 0 8px 24px rgba(11, 23, 41, 0.08);
     --shadow-lg: 0 24px 60px rgba(11, 23, 41, 0.12);
     --shadow-glow: 0 0 60px rgba(42, 47, 143, 0.1);
+    --shadow-card: 0 20px 62px rgba(45, 35, 22, 0.11), 0 0 52px rgba(42, 47, 143, 0.07);
 
     color-scheme: light;
 }

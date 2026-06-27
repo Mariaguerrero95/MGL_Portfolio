@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g4" x1="0" x2="1">
+      <stop offset="0" stop-color="#132030"/>
+      <stop offset="1" stop-color="#274058"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g4)" />
+  <g fill="#fff" font-family="Plus Jakarta Sans, Arial, sans-serif">
+    <text x="64" y="100" font-size="36" font-weight="700">AI-Assisted Governance Dashboard</text>
+    <rect x="64" y="140" width="1200" height="420" rx="12" fill="#0b2433" opacity="0.9" />
+    <g transform="translate(84,160)" fill="#dfefff">
+      <rect x="0" y="0" width="1120" height="320" rx="12" />
+    </g>
+    <text x="64" y="600" font-size="18" fill="#cfe8ff">Governance dashboard mockup. Placeholder image.</text>
+  </g>
+</svg>

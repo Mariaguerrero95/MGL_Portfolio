@@ -46,6 +46,17 @@ export function scrollToTop(immediate = false) {
     }
 }
 
+export function scrollToSection(id, immediate = false) {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    if (lenis) {
+        lenis.scrollTo(target, { immediate });
+    } else {
+        target.scrollIntoView({ behavior: immediate ? 'auto' : 'smooth', block: 'start' });
+    }
+}
+
 export function getLenis() {
     return lenis;
 }

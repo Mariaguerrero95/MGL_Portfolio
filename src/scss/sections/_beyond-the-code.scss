@@ -1,0 +1,86 @@
+.beyond-the-code {
+    // hide the default section label dot for this section
+    .section-label__dot { display: none; }
+
+    /* pull this section up so the cards visually sit inside Product Philosophy */
+    margin-top: -204px;
+    position: relative;
+    z-index: 1;
+
+    .beyond-the-code__grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .beyond-card {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        padding: 24px;
+        border-radius: 28px;
+        background: #fff8ee; // cream card fallback
+        border: 1px solid rgba(16, 12, 20, 0.04);
+        box-shadow: 0 10px 28px rgba(12, 8, 24, 0.06);
+        transition: transform 0.22s var(--ease-out), box-shadow 0.22s;
+
+        &__icon {
+            width: 76px;
+            height: 76px;
+            min-width: 76px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--accent, #6b21a8);
+            background: linear-gradient(135deg, rgba(185,156,255,0.18), rgba(229,218,255,0.12));
+            box-shadow: inset 0 -6px 18px rgba(107,33,168,0.04);
+        }
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        &__text {
+            margin: 6px 0 0 0;
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        &:hover,
+        &:focus-within {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 40px rgba(12, 8, 24, 0.12);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        margin-top: -48px;
+        .beyond-the-code__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        /* on small screens restore normal flow (no overlap) */
+        margin-top: 0;
+        .beyond-the-code__grid {
+            grid-template-columns: 1fr;
+        }
+
+        .beyond-card {
+            padding: 18px;
+            &__icon { width: 64px; height: 64px; min-width: 64px; font-size: 26px; }
+        }
+    }
+}

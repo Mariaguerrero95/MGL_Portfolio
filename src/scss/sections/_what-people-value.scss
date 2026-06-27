@@ -1,0 +1,72 @@
+/* What People Value section styles */
+.what-people {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+
+  .section-title {
+    margin-bottom: var(--space-6);
+  }
+
+  .what-people__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    align-items: stretch;
+  }
+
+  .what-people__card {
+    position: relative;
+    background: var(--cream);
+    color: var(--surface-card-text);
+    padding: calc(var(--space-6) * 1.2);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &::before {
+      content: '“';
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      font-size: 4.5rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.95;
+      font-family: var(--font-serif);
+    }
+
+    .what-people__quote {
+      margin: 0 0 var(--space-4) 0;
+      padding-left: 1rem;
+      font-size: var(--fs-lg);
+      font-family: var(--font-serif);
+      color: var(--text-strong);
+      z-index: 1;
+      line-height: 1.45;
+    }
+
+    .what-people__source {
+      margin-top: var(--space-4);
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      display: flex;
+      gap: var(--space-2);
+      align-items: baseline;
+      z-index: 1;
+    }
+
+    .what-people__author {
+      font-weight: 700;
+      color: var(--text-strong);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .what-people__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+}

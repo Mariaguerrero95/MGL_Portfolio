@@ -1,0 +1,65 @@
+/* Product Philosophy — editorial, minimal */
+.product-philosophy {
+  margin-block: var(--space-9);
+
+  /* keep section content a bit narrower for editorial feel — rely on global .container */
+
+  .product-philosophy__inner {
+    display: grid;
+    grid-template-columns: 530px 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .product-philosophy__lead {
+    padding-right: var(--space-4);
+
+    .section-label { color: var(--text-muted); }
+
+    .section-title {
+      margin: 0;
+      font-size: var(--fs-h1);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--text-strong);
+      font-weight: 700;
+    }
+  }
+
+  .product-philosophy__copy {
+    p {
+      margin: 0 0 var(--space-5) 0;
+      color: var(--text-muted);
+      font-size: var(--fs-md);
+      line-height: 1.75;
+      max-width: 86ch;
+    }
+  }
+
+  /* subtle ambient wash — very low opacity to keep "no visible background" requirement */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(800px 400px at 10% 20%, var(--canvas-lavender), transparent 30%),
+                radial-gradient(600px 300px at 90% 80%, rgba(244,237,224,0.04), transparent 30%);
+    opacity: 0.12;
+    mix-blend-mode: overlay;
+    z-index: 0;
+  }
+
+  .product-philosophy__inner > * { position: relative; z-index: 1; }
+
+  @media (max-width: 1024px) {
+    .product-philosophy__inner { grid-template-columns: 1fr; align-items: start; }
+    .product-philosophy__lead { margin-bottom: var(--space-6); }
+  }
+
+  @media (max-width: 640px) {
+    margin-block: var(--space-7);
+    .product-philosophy__lead { .section-title { font-size: var(--fs-h2); } }
+    /* restore top spacing on small screens for comfortable reading */
+    .product-philosophy__lead { .section-title { margin-top: var(--space-4); } }
+  }
+}

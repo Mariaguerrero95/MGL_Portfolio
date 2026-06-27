@@ -17,7 +17,7 @@
             position: absolute;
             inset: -1px;
             border-radius: inherit;
-            background: linear-gradient(135deg, var(--accent-glow), transparent 50%);
+            background: linear-gradient(135deg, color-mix(in srgb, var(--accent-glow) 48%, transparent), transparent 50%);
             pointer-events: none;
             opacity: 0.6;
             z-index: 0;
@@ -35,7 +35,7 @@
     &__quote {
         font-size: clamp(1.25rem, 1.4vw + 0.8rem, 1.75rem);
         line-height: 1.45;
-        color: var(--text-strong);
+        color: var(--surface-card-text);
         font-style: italic;
         position: relative;
         z-index: 1;
@@ -47,14 +47,14 @@
         align-items: center;
         gap: 12px;
         font-size: var(--fs-sm);
-        color: var(--text-muted);
+        color: var(--surface-card-muted);
         position: relative;
         z-index: 1;
 
         &-avatar {
             width: 36px; height: 36px;
             border-radius: 50%;
-            background: var(--surface-2);
+            background: #0b1a2e;
             border: 1px solid var(--border-strong);
             display: inline-flex;
             align-items: center;
@@ -73,9 +73,9 @@
         gap: 16px;
 
         button {
-            background: var(--surface);
+            background: var(--surface-card);
             border: 1px solid var(--border);
-            color: var(--text);
+            color: var(--surface-card-text);
             width: 40px; height: 40px;
             border-radius: 50%;
             display: inline-flex;

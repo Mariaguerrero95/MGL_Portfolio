@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "id": "life-sciences",
+      "slug": "life-sciences-intelligence-workspace",
+      "title": "Life Sciences Intelligence Workspace",
+      "shortContext": "Unified research workspace for life sciences teams to explore and annotate datasets.",
+      "roles": ["Product Engineer", "Frontend", "Full-stack", "AI-assisted features"],
+      "tech": ["React", "Node.js", "Postgres", "Python/ML"],
+      "problem": "Researchers needed a unified interface to find, correlate and annotate diverse datasets quickly.",
+      "solution": "Built a product-focused workspace with curated data views, inline annotations and AI-assisted insight suggestions to accelerate discovery.",
+      "screenshot": "/previews/life-sciences-desktop.jpg",
+      "mobileScreenshot": "/previews/life-sciences-mobile.jpg",
+      "screenshotWebp": "/previews/life-sciences-desktop.webp",
+      "mobileScreenshotWebp": "/previews/life-sciences-mobile.webp"
+    },
+    {
+      "id": "conference-platform",
+      "slug": "conference-planning-data-platform",
+      "title": "Conference Planning Data Platform",
+      "shortContext": "Platform to orchestrate conference logistics, scheduling and analytics for organizers.",
+      "roles": ["Product Engineer", "Full-stack", "Integrations"],
+      "tech": ["React", "GraphQL", "Redis", "AWS"],
+      "problem": "Organizers lacked a single source of truth for planning and coordinating large events.",
+      "solution": "Designed a data platform connecting schedules, speaker profiles and analytics with first-class tooling for planners and partners.",
+      "screenshot": "/previews/conference-platform-desktop.jpg",
+      "mobileScreenshot": "/previews/conference-platform-mobile.jpg"
+    },
+    {
+      "id": "ai-governance",
+      "slug": "ai-assisted-governance-dashboard",
+      "title": "AI-Assisted Governance Dashboard",
+      "shortContext": "Decision-support dashboard combining human review with AI recommendations for governance teams.",
+      "roles": ["Product Engineer", "Frontend", "AI integrations"],
+      "tech": ["React", "TensorFlow", "Node.js", "Postgres"],
+      "problem": "Governance teams needed faster triage with explainable AI recommendations.",
+      "solution": "Implemented an AI-assisted review workflow with clear provenance, human-in-the-loop controls and visual explainability.",
+      "screenshot": "/previews/ai-governance-desktop.jpg",
+      "mobileScreenshot": "/previews/ai-governance-mobile.jpg"
+    }
+  ]
+}

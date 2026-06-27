@@ -7,6 +7,7 @@ import { SiTypescript, SiReact, SiPython } from 'react-icons/si';
 import { TbWaveSine } from 'react-icons/tb';
 import MagneticButton from '../ui/MagneticButton.jsx';
 import SectionLabel from '../ui/SectionLabel.jsx';
+import { scrollToSection } from '../../lib/smooth-scroll.js';
 
 export default function Hero() {
     const { t } = useTranslation();
@@ -44,6 +45,11 @@ export default function Hero() {
         }),
     };
 
+    const handleWorkClick = (event) => {
+        event.preventDefault();
+        scrollToSection('work');
+    };
+
     return (
         <section className="hero">
             <div className="container hero__grid">
@@ -77,7 +83,7 @@ export default function Hero() {
                         className="hero__ctas"
                         custom={5} variants={fadeUp} initial="initial" animate="animate"
                     >
-                        <MagneticButton as="a" href="#work" className="btn btn--primary">
+                        <MagneticButton as="a" href="#work" className="btn btn--primary" onClick={handleWorkClick}>
                             {t('hero.cta.primary')}
                             <span className="arrow"><TbArrowRight /></span>
                         </MagneticButton>
@@ -121,19 +127,7 @@ export default function Hero() {
                             <img src="./Fotocv.jpg" alt="María Guerrero Lobo" />
                         </div>
 
-                        <div className="hero__stars" aria-hidden="true">
-                            {Array.from({ length: 18 }).map((_, i) => (
-                                <span
-                                    key={i}
-                                    className="hero__star"
-                                    style={{
-                                        top: `${Math.random() * 100}%`,
-                                        left: `${Math.random() * 100}%`,
-                                        animationDelay: `${Math.random() * 4}s`,
-                                    }}
-                                />
-                            ))}
-                        </div>
+                        {/* Background stars moved to GlobalBackground; keep hero visuals content-only */}
                     </div>
 
                 </div>

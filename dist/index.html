@@ -5,12 +5,25 @@
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#07111F" />
-    <meta name="description" content="María Guerrero Lobo — Frontend & Product Engineer crafting intelligent digital experiences." />
-    <title>María Guerrero Lobo — Frontend & Product Engineer</title>
-    <script type="module" crossorigin src="./assets/index-DL84Gndm.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CmcyLLFw.css">
+    <meta name="description" content="María Guerrero Lobo — Full Stack & Product Engineer crafting intelligent digital experiences." />
+    <title>María Guerrero Lobo — Full Stack & Product Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-Bl1SGy3E.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D-OweSMd.css">
   </head>
-  <body class="theme-dark">
+  <body>
+    <script>
+      (function(){
+        try {
+          var key = 'mgl-theme';
+          var stored = window.localStorage && window.localStorage.getItem(key);
+          var theme = (stored === 'light' || stored === 'dark') ? stored : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.body.classList.add('theme-' + theme);
+        } catch (e) { /* ignore */ }
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>

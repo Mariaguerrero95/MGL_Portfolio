@@ -11,16 +11,63 @@ html {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
+    background: var(--canvas-base);
 }
 
 body {
     font-family: var(--font-sans);
     font-size: var(--fs-md);
     color: var(--text);
-    background-color: var(--bg);
+    background:
+        radial-gradient(1150px 780px at 86% 4%, var(--canvas-lavender), transparent 62%),
+        radial-gradient(900px 680px at 4% 38%, var(--canvas-warm), transparent 66%),
+        radial-gradient(1180px 760px at 76% 92%, var(--canvas-purple), transparent 68%),
+        linear-gradient(180deg, var(--canvas-base), var(--bg));
     line-height: 1.55;
     overflow-x: hidden;
-    transition: background-color 0.6s var(--ease-out), color 0.3s var(--ease-out);
+    transition: background 0.6s var(--ease-out), color 0.3s var(--ease-out);
+    min-height: 100vh;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    inset: auto;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(72px);
+    transform: translateZ(0);
+}
+
+body::before {
+    width: min(62vw, 920px);
+    height: min(52vw, 760px);
+    top: -18vh;
+    right: -14vw;
+    background: var(--canvas-lavender);
+    opacity: 0.72;
+}
+
+body::after {
+    width: min(70vw, 980px);
+    height: min(48vw, 680px);
+    left: -20vw;
+    bottom: -24vh;
+    background: var(--canvas-haze);
+    opacity: 0.78;
+}
+
+#root,
+#main {
+    min-height: 100%;
+    background: transparent;
+}
+
+#root {
+    position: relative;
+    z-index: 1;
 }
 
 img,
@@ -75,5 +122,39 @@ select {
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    body::before {
+        width: 760px;
+        height: 560px;
+        top: -16vh;
+        right: -34vw;
+        filter: blur(58px);
+        opacity: 0.58;
+    }
+
+    body::after {
+        width: 720px;
+        height: 520px;
+        left: -40vw;
+        bottom: -18vh;
+        filter: blur(58px);
+        opacity: 0.55;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        background:
+            radial-gradient(640px 420px at 78% 0%, var(--canvas-lavender), transparent 66%),
+            radial-gradient(520px 360px at 0% 48%, var(--canvas-warm), transparent 70%),
+            linear-gradient(180deg, var(--canvas-base), var(--bg));
+    }
+
+    body::before,
+    body::after {
+        display: none;
     }
 }

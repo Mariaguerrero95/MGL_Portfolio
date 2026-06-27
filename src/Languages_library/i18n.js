@@ -34,7 +34,7 @@ const en = {
             line3Pre: 'that solve',
             line3Em: 'real problems.',
         },
-        description: 'I design and build scalable, human-centered products with modern technologies, AI integrations and great UX.',
+        description: "I'm a product-minded engineer who loves turning complex systems into clear, intuitive experiences. I care about details, performance and creating impactful solutions. I design and build scalable, human-centered products with modern technologies.",
         cta: { primary: 'View my work', secondary: "Let's talk" },
     },
     featured: { kicker: 'FEATURED CASE STUDIES' },
@@ -67,17 +67,6 @@ const en = {
                 summary: 'Full Stack Developer',
                 description: 'Worked on multiple projects to explore ideas, learn new technologies and solve real problems.',
             },
-        },
-    },
-    about: {
-        kicker: 'ABOUT ME',
-        body: "I'm a product-minded engineer who loves turning complex systems into clear, intuitive experiences. I care about details, performance and creating impactful solutions.",
-        cta: 'More about me',
-        stats: {
-            years: { value: '2+', label: 'Years of experience' },
-            projects: { value: '10+', label: 'Projects shipped' },
-            commits: { value: '100+', label: 'Commits this year' },
-            curiosity: { value: '∞', label: 'Curiosity' },
         },
     },
     testimonials: {
@@ -204,7 +193,7 @@ const es = {
             line3Pre: 'que resuelven',
             line3Em: 'problemas reales.',
         },
-        description: 'Diseño y desarrollo productos escalables y centrados en las personas, con tecnologías modernas, integraciones de IA y UX cuidada.',
+        description: 'Soy una ingeniera con mentalidad de producto a la que le encanta convertir sistemas complejos en experiencias claras e intuitivas. Cuido el detalle, el rendimiento y creo soluciones con impacto. Diseño y desarrollo productos escalables y centrados en las personas, con tecnologías modernas, integraciones de IA y UX cuidada.',
         cta: { primary: 'Ver mi trabajo', secondary: 'Hablemos' },
     },
     featured: { kicker: 'CASE STUDIES DESTACADOS' },
@@ -237,17 +226,6 @@ const es = {
                 summary: 'Full Stack Developer',
                 description: 'Trabajé en múltiples proyectos para explorar ideas, aprender nuevas tecnologías y resolver problemas reales.',
             },
-        },
-    },
-    about: {
-        kicker: 'SOBRE MÍ',
-        body: 'Soy una ingeniera con mentalidad de producto a la que le encanta convertir sistemas complejos en experiencias claras e intuitivas. Cuido el detalle, el rendimiento y crear soluciones con impacto.',
-        cta: 'Más sobre mí',
-        stats: {
-            years: { value: '2+', label: 'Años de experiencia' },
-            projects: { value: '10+', label: 'Proyectos entregados' },
-            commits: { value: '100+', label: 'Commits este año' },
-            curiosity: { value: '∞', label: 'Curiosidad' },
         },
     },
     testimonials: {

@@ -1,0 +1,260 @@
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { TbArrowRight, TbExternalLink } from 'react-icons/tb';
+
+const projects = [
+    {
+        number: '01',
+        title: 'Life Sciences Intelligence Workspace',
+        role: 'Product Engineer · Frontend · Backend · AI-assisted Systems',
+        description: 'A secure workspace for turning scattered market, therapy and research data into usable intelligence.',
+        highlights: [
+            'AI-assisted workflows',
+            'frontend architecture',
+            'Python backend development',
+            'dashboard systems',
+            'research operations',
+        ],
+        cta: 'View Case Study',
+        href: '/work/life-sciences',
+        visual: 'life-sciences',
+    },
+    {
+        number: '02',
+        title: 'Conference Planning Data Platform',
+        role: 'Product Engineer · Frontend · Backend',
+        description: 'A planning platform that transforms conference websites into structured, actionable planning data.',
+        highlights: [
+            'conference data automation',
+            'workflow design',
+            'Python backend services',
+            'frontend implementation',
+            'export systems',
+        ],
+        cta: 'View Case Study',
+        href: '/work/conference-platform',
+        visual: 'conference',
+    },
+    {
+        number: '03',
+        title: 'Setpoint Volleyball Platform',
+        badge: 'Coming Soon',
+        role: 'Frontend Engineer · Product Designer',
+        description:
+            'An Irish volleyball platform designed for players, teams and communities. Designed and developed with a focus on usability, performance and modern product experience.',
+        highlights: ['UI design', 'frontend development', 'responsive interfaces', 'sports platform'],
+        cta: 'Coming Soon',
+        visual: 'setpoint',
+        disabled: true,
+    },
+    {
+        number: '04',
+        title: 'Zano Website & Brand Refresh',
+        badge: 'Live Product',
+        role: 'Product Designer · Frontend Engineer',
+        description:
+            "Led the redesign and frontend implementation of Zano's public website, helping create a clearer visual identity, stronger information hierarchy and a more polished digital presence.",
+        highlights: [
+            'website redesign',
+            'frontend implementation',
+            'information architecture',
+            'responsive design',
+            'brand refinement',
+        ],
+        cta: 'Visit Website',
+        href: 'https://zano.ie/',
+        visual: 'zano',
+        live: true,
+    },
+];
+
+function ProjectVisual({ type, title }) {
+    const mapping = {
+        'life-sciences': {
+            desktop: {
+                jpg: '/previews/life-sciences-desktop.jpg',
+                jpg2x: '/previews/life-sciences-desktop@2x.jpg',
+                webp: '/previews/life-sciences-desktop.webp',
+                webp2x: '/previews/life-sciences-desktop@2x.webp',
+                svg: '/previews/life-sciences-desktop.svg',
+            },
+            mobile: {
+                jpg: '/previews/life-sciences-mobile.jpg',
+                jpg2x: '/previews/life-sciences-mobile@2x.jpg',
+                webp: '/previews/life-sciences-mobile.webp',
+                webp2x: '/previews/life-sciences-mobile@2x.webp',
+            },
+        },
+        conference: {
+            desktop: { jpg: '/previews/conference-platform-desktop.jpg', webp: '/previews/conference-platform-desktop.webp' },
+            mobile: { jpg: '/previews/conference-platform-mobile.jpg', webp: '/previews/conference-platform-mobile.webp' },
+        },
+        setpoint: { desktop: { jpg: '/previews/setpoint-desktop.jpg', webp: '/previews/setpoint-desktop.webp' }, mobile: { jpg: '/previews/setpoint-mobile.jpg', webp: '/previews/setpoint-mobile.webp' } },
+        'ai-governance': { desktop: { jpg: '/previews/ai-governance-desktop.jpg', webp: '/previews/ai-governance-desktop.webp' }, mobile: { jpg: '/previews/ai-governance-mobile.jpg', webp: '/previews/ai-governance-mobile.webp' } },
+        zano: { desktop: { jpg: '/previews/zano-live-homepage.png', webp: '/previews/zano-live-homepage.webp' }, mobile: { jpg: '/previews/zano-live-homepage-mobile.png', webp: '/previews/zano-live-homepage-mobile.webp' } },
+    };
+
+    const src = mapping[type] || mapping.zano;
+
+    // Fallback: if no jpg/webp defined, fall back to svg or png
+    const desktopJpg = (src.desktop && src.desktop.jpg) || (src.desktop && src.desktop.png) || src.desktop?.svg;
+
+    return (
+        <picture>
+            {/* mobile first */}
+            {src.mobile && src.mobile.webp && (
+                <source media="(max-width: 720px)" type="image/webp" srcSet={`${src.mobile.webp} 1x${src.mobile.webp2x ? `, ${src.mobile.webp2x} 2x` : ''}`} />
+            )}
+            {src.mobile && src.mobile.jpg && (
+                <source media="(max-width: 720px)" type="image/jpeg" srcSet={`${src.mobile.jpg} 1x${src.mobile.jpg2x ? `, ${src.mobile.jpg2x} 2x` : ''}`} />
+            )}
+
+            {src.desktop && src.desktop.webp && (
+                <source type="image/webp" srcSet={`${src.desktop.webp} 1x${src.desktop.webp2x ? `, ${src.desktop.webp2x} 2x` : ''}`} />
+            )}
+            {src.desktop && src.desktop.jpg && (
+                <source type="image/jpeg" srcSet={`${src.desktop.jpg} 1x${src.desktop.jpg2x ? `, ${src.desktop.jpg2x} 2x` : ''}`} />
+            )}
+
+            {/* final fallback to svg/png if present */}
+            <img className="selected-card__img" src={desktopJpg || src.desktop?.jpg || src.desktop?.svg || '/previews/zano-live-homepage.png'} alt={`${title} screenshot`} loading="lazy" />
+        </picture>
+    );
+}
+
+ProjectVisual.propTypes = {
+    type: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+};
+
+function ProjectCta({ project }) {
+    const icon = project.live ? <TbExternalLink /> : <TbArrowRight />;
+
+    if (project.disabled) {
+        return (
+            <span className="selected-work-card__cta selected-work-card__cta--disabled" aria-disabled="true">
+                {project.cta}
+            </span>
+        );
+    }
+
+    if (project.live) {
+        return (
+            <a
+                className="selected-work-card__cta"
+                href={project.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${project.cta}: ${project.title}`}
+            >
+                <span>{project.cta}</span>
+                {icon}
+            </a>
+        );
+    }
+
+    return (
+        <Link className="selected-work-card__cta" to={project.href} aria-label={`${project.cta}: ${project.title}`}>
+            <span>{project.cta}</span>
+            {icon}
+        </Link>
+    );
+}
+
+const projectShape = PropTypes.shape({
+    number: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    highlights: PropTypes.arrayOf(PropTypes.string).isRequired,
+    cta: PropTypes.string.isRequired,
+    href: PropTypes.string,
+    visual: PropTypes.string.isRequired,
+    badge: PropTypes.string,
+    disabled: PropTypes.bool,
+    live: PropTypes.bool,
+});
+
+ProjectCta.propTypes = {
+    project: projectShape.isRequired,
+};
+
+function SelectedWorkCard({ project }) {
+    return (
+        <article className={`selected-work-card${project.live ? ' selected-work-card--live' : ''}`}>
+            <div className="selected-work-card__visual">
+                <ProjectVisual type={project.visual} title={project.title} />
+            </div>
+            <div className="selected-work-card__body">
+                <div className="selected-work-card__meta">
+                    <span>{project.number}</span>
+                    {project.badge && (
+                        <span className={`selected-work-card__badge${project.live ? ' selected-work-card__badge--live' : ''}`}>
+                            {project.badge}
+                        </span>
+                    )}
+                </div>
+                <h3>{project.title}</h3>
+                <p className="selected-work-card__role">{project.role}</p>
+                <p className="selected-work-card__description">{project.description}</p>
+                <div className="selected-work-card__highlights" aria-label={`${project.title} highlights`}>
+                    {project.highlights.map((highlight) => (
+                        <span key={highlight}>{highlight}</span>
+                    ))}
+                </div>
+                <ProjectCta project={project} />
+            </div>
+        </article>
+    );
+}
+
+SelectedWorkCard.propTypes = {
+    project: projectShape.isRequired,
+};
+
+export default function ZanoSelectedWork() {
+    return (
+        <section className="section zano-selected-work" id="work" aria-labelledby="selected-work-title">
+            <div className="container">
+                <div className="zano-selected-work__head">
+                    <div className="kicker">FEATURED PROJECTS</div>
+                    <h2 id="selected-work-title">Selected Work</h2>
+                    <p>A curated selection of product, frontend, backend and design work developed through real-world projects.</p>
+                </div>
+
+                <div className="zano-selected-work__grid">
+                    {projects.map((project) => (
+                        <article key={project.number} className={`selected-card ${project.live ? 'is-live' : ''}`}>
+                            <div className="selected-card__image">
+                                <ProjectVisual type={project.visual} title={project.title} />
+                            </div>
+
+                            <div className="selected-card__body selected-card__content">
+                                <div className="selected-card__top">
+                                    <span className="selected-card__index">{project.number}</span>
+                                    {project.badge && (
+                                        <span className={`selected-card__badge ${project.live ? 'live' : ''}`}>{project.badge}</span>
+                                    )}
+                                </div>
+
+                                <h3 className="selected-card__title">{project.title}</h3>
+
+                                <div className="selected-card__roles">
+                                    {project.role.split(' · ').slice(0, 3).map((r) => (
+                                        <span key={r} className="chip chip--small">{r}</span>
+                                    ))}
+                                </div>
+
+                                <p className="selected-card__excerpt">{project.description}</p>
+
+                                <div className="selected-card__cta-wrap">
+                                    <ProjectCta project={project} />
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

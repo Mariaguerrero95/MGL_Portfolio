@@ -4,11 +4,8 @@ import ImpactAtZano from '../components/sections/ImpactAtZano.jsx';
 import ZanoSelectedWork from '../components/sections/ZanoSelectedWork.jsx';
 import ProductPhilosophy from '../components/sections/ProductPhilosophy.jsx';
 import BeyondTheCode from '../components/sections/BeyondTheCode.jsx';
-import TechMarqueeRefined from '../components/sections/TechMarqueeRefined.jsx';
-import Experience from '../components/sections/Experience.jsx';
-import About from '../components/sections/About.jsx';
-import TestimonialsGrid from '../components/sections/TestimonialsGrid.jsx';
-import ContactFormEditorial from '../components/sections/ContactFormEditorial.jsx';
+import CapabilitiesTabs from '../components/sections/CapabilitiesTabs.jsx';
+import WhatPeopleValue from '../components/sections/WhatPeopleValue.jsx';
 
 export default function Home() {
     return (
@@ -21,13 +18,10 @@ export default function Home() {
             <Hero />
             <ImpactAtZano />
             <ZanoSelectedWork />
-            <Experience />
             <ProductPhilosophy />
             <BeyondTheCode />
-            <TechMarqueeRefined />
-            <About />
-            <TestimonialsGrid />
-            <ContactFormEditorial />
+            <CapabilitiesTabs />
+            <WhatPeopleValue />
         </motion.div>
     );
 }

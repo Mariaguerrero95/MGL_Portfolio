@@ -3,7 +3,7 @@
 
     &__hero {
         padding-bottom: var(--space-8);
-        background: radial-gradient(800px 500px at 90% 0%, var(--accent-glow), transparent 60%);
+        background: transparent;
     }
 
     &__back {
@@ -53,8 +53,8 @@
         padding: var(--space-5);
         border-radius: var(--radius-xl);
         border: 1px solid var(--border-accent);
-        background: linear-gradient(180deg, var(--surface-2), var(--surface));
-        box-shadow: var(--shadow-lg), var(--shadow-glow);
+        background: var(--surface-card);
+        box-shadow: var(--shadow-card);
 
         .preview-svg {
             width: 100%;
@@ -104,7 +104,7 @@
 
         &-title {
             font-size: var(--fs-h3);
-            color: var(--text-strong);
+            color: var(--surface-card-text);
             display: block;
             margin-top: 6px;
         }

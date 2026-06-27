@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../lib/theme.jsx';
+import { scrollToSection } from '../../lib/smooth-scroll.js';
 import { TbSun, TbMoon, TbMenu2, TbX } from 'react-icons/tb';
 
 export default function Header() {
     const { t, i18n } = useTranslation();
     const { theme, toggle } = useTheme();
     const location = useLocation();
+    const navigate = useNavigate();
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
 
@@ -25,12 +27,24 @@ export default function Header() {
         { id: 'work', href: '/#work' },
         { id: 'experience', href: '/#experience' },
         { id: 'skills', href: '/#skills' },
-        { id: 'about', href: '/#about' },
         { id: 'testimonials', href: '/#testimonials' },
         { id: 'contact', href: '/contact', route: true },
     ];
 
     const toggleLang = () => i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en');
+
+    const handleSectionLink = (event, id) => {
+        event.preventDefault();
+        const scroll = () => requestAnimationFrame(() => scrollToSection(id));
+
+        if (location.pathname !== '/') {
+            navigate('/');
+            window.setTimeout(scroll, 80);
+            return;
+        }
+
+        scroll();
+    };
 
     return (
         <motion.header
@@ -44,6 +58,7 @@ export default function Header() {
                     <span className="site-header__logo">M</span>
                     <span className="site-header__brand-name">{t('header.brand')}</span>
                 </Link>
+                
 
                 <nav className="site-header__nav" aria-label="Primary">
                     {navItems.map((item) =>
@@ -52,7 +67,12 @@ export default function Header() {
                                 {t(`header.${item.id}`)}
                             </NavLink>
                         ) : (
-                            <a key={item.id} href={item.href} className="site-header__link">
+                            <a
+                                key={item.id}
+                                href={item.href}
+                                className="site-header__link"
+                                onClick={(event) => handleSectionLink(event, item.id)}
+                            >
                                 {t(`header.${item.id}`)}
                             </a>
                         )
@@ -118,7 +138,14 @@ export default function Header() {
                                     {t(`header.${item.id}`)}
                                 </NavLink>
                             ) : (
-                                <a key={item.id} href={item.href} onClick={() => setOpen(false)}>
+                                <a
+                                    key={item.id}
+                                    href={item.href}
+                                    onClick={(event) => {
+                                        setOpen(false);
+                                        handleSectionLink(event, item.id);
+                                    }}
+                                >
                                     {t(`header.${item.id}`)}
                                 </a>
                             )

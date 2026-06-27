@@ -4,17 +4,7 @@
     padding-bottom: var(--space-9);
     overflow: hidden;
 
-    // Cinematic background gradient
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-            radial-gradient(900px 600px at 80% 10%, var(--accent-glow), transparent 60%),
-            radial-gradient(700px 500px at 0% 80%, rgba(107, 123, 201, 0.18), transparent 60%);
-        pointer-events: none;
-        opacity: 0.85;
-    }
+    /* Background visuals moved to GlobalBackground component; keep section transparent */
 
     @media (min-width: 1440px) {
         /* Make the landing fill the viewport on desktop so other sections are not visible on first load */
@@ -152,45 +142,6 @@
         }
     }
 
-    /* Mobile: show photo to the right of the main copy and reduce its size */
-    @media (max-width: 767px) {
-        padding-top: calc(var(--header-h) + 16px);
-        padding-bottom: var(--space-6);
-
-        &__grid {
-            grid-template-columns: 1fr 200px; /* text + larger photo */
-            gap: var(--space-5);
-            align-items: start; /* align visual to the top of the text */
-        }
-
-        &__title {
-            font-size: clamp(1.6rem, 6vw, 2.4rem);
-            line-height: 1.06;
-        }
-
-        &__visual {
-            justify-self: end;
-            max-width: 200px;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            margin-inline: 0;
-            transform: translateX(-20%); /* shift photo more left towards text */
-            translate: none; /* disable orbit translation on mobile layout */
-        }
-
-        &__photo {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg), 0 0 40px var(--accent-glow);
-        }
-
-        &__desc {
-            max-width: none; /* let description flow full column width on mobile */
-        }
-    }
-
     &__desc {
         max-width: 460px;
         font-size: var(--fs-lg);
@@ -320,21 +271,7 @@
         }
     }
 
-    &__stars {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-    }
-
-    &__star {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        border-radius: 50%;
-        background: var(--accent);
-        opacity: 0.5;
-        animation: star-twinkle 4s ease-in-out infinite;
-    }
+    /* decorative stars removed; use GlobalBackground for ambient effects */
 
     &__locale {
         position: relative;

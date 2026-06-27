@@ -139,11 +139,27 @@
 
 // -------- Cards --------
 .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: var(--surface-card);
+    border: 1px solid var(--border-card);
     border-radius: var(--radius-lg);
+    color: var(--surface-card-text);
+    box-shadow: var(--shadow-card);
     transition: border-color 0.3s var(--ease-out), transform 0.5s var(--ease-out),
                 box-shadow 0.5s var(--ease-out);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--surface-card-text);
+    }
+
+    p,
+    li {
+        color: var(--surface-card-muted);
+    }
 }
 
 .glass {
@@ -161,14 +177,14 @@
     border-radius: var(--radius-full);
     border: 1px solid var(--border);
     font-size: var(--fs-xs);
-    color: var(--text-muted);
-    background: transparent;
+    color: var(--surface-card-muted);
+    background: rgba(255, 255, 255, 0.18);
     line-height: 1;
     white-space: nowrap;
     transition: color 0.3s, border-color 0.3s, background 0.3s;
 
     &:hover {
-        color: var(--text);
+        color: var(--surface-card-text);
         border-color: var(--border-strong);
     }
 }

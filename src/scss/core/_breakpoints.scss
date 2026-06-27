@@ -1,0 +1,39 @@
+// SCSS breakpoint helpers — non-intrusive utilities
+// Define named breakpoints and convenience mixins for use across components.
+
+$breakpoints: (
+  'xs': 480px,
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  'xxl': 1440px,
+);
+
+@mixin up($size) {
+  $val: map-get($breakpoints, $size);
+  @if $val {
+    @media (min-width: $val) { @content; }
+  } @else {
+    @warn "Unknown breakpoint `#{$size}`.`";
+  }
+}
+
+@mixin down($size) {
+  $val: map-get($breakpoints, $size);
+  @if $val {
+    @media (max-width: ($val - 1)) { @content; }
+  } @else {
+    @warn "Unknown breakpoint `#{$size}`.`";
+  }
+}
+
+@mixin between($from, $to) {
+  $a: map-get($breakpoints, $from);
+  $b: map-get($breakpoints, $to);
+  @if $a and $b {
+    @media (min-width: $a) and (max-width: ($b - 1)) { @content; }
+  } @else {
+    @warn "Unknown breakpoints in between(#{$from}, #{$to}).";
+  }
+}

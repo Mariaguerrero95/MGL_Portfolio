@@ -71,13 +71,13 @@
 
     &__card-title {
         font-size: var(--fs-h4);
-        color: var(--text-strong);
+        color: var(--surface-card-text);
         line-height: 1.25;
     }
 
     &__card-desc {
         font-size: var(--fs-sm);
-        color: var(--text-muted);
+        color: var(--surface-card-muted);
         line-height: 1.55;
     }
 

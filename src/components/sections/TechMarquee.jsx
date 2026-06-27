@@ -4,7 +4,7 @@ export default function TechMarquee() {
     return (
         <section className="marquee" aria-hidden="true">
             {MARQUEE_ROWS.map((row, idx) => (
-                <div key={idx} className={`marquee__row marquee__row--${idx % 2 === 0 ? 'left' : 'right'}`}>
+                <div key={idx} className={`marquee__row container marquee__row--${idx % 2 === 0 ? 'left' : 'right'}`}>
                     <div className="marquee__track">
                         {[...row, ...row, ...row].map((item, i) => (
                             <span key={i} className="marquee__item">
