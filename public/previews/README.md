@@ -1,13 +1,13 @@
-Place high-resolution screenshots for the Zano case studies in this folder.
+# Previews
 
-Required files (recommended names):
+Assets in this folder are used as previews on selected work cards. Generated files include WebP and JPG fallbacks at 1x and 2x resolutions.
 
+Generated files for life-sciences:
+- life-sciences-desktop.webp
 - life-sciences-desktop.jpg
+- life-sciences-desktop@2x.webp
+- life-sciences-desktop@2x.jpg
+- life-sciences-mobile.webp
 - life-sciences-mobile.jpg
-- conference-platform-desktop.jpg
-- conference-platform-mobile.jpg
-- ai-governance-desktop.jpg
-- ai-governance-mobile.jpg
-- zano-cover.jpg
-
-Use WebP/AVIF if possible and provide 2x assets for large displays.
+- life-sciences-mobile@2x.webp
+- life-sciences-mobile@2x.jpg
