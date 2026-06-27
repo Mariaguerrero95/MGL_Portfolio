@@ -21,7 +21,7 @@ const projects = [
     },
     {
         number: '02',
-        title: 'Conference Planning Data Platform',
+        title: 'Event Data Automation',
         role: 'Product Engineer · Frontend · Backend',
         description: 'A planning platform that transforms conference websites into structured, actionable planning data.',
         highlights: [
@@ -37,7 +37,7 @@ const projects = [
     },
     {
         number: '03',
-        title: 'Setpoint Volleyball Platform',
+        title: 'Volleyball Platform',
         badge: 'Coming Soon',
         role: 'Frontend Engineer · Product Designer',
         description:
@@ -70,55 +70,17 @@ const projects = [
 
 function ProjectVisual({ type, title }) {
     const mapping = {
-        'life-sciences': {
-            desktop: {
-                jpg: '/previews/life-sciences-desktop.jpg',
-                jpg2x: '/previews/life-sciences-desktop@2x.jpg',
-                webp: '/previews/life-sciences-desktop.webp',
-                webp2x: '/previews/life-sciences-desktop@2x.webp',
-                svg: '/previews/life-sciences-desktop.svg',
-            },
-            mobile: {
-                jpg: '/previews/life-sciences-mobile.jpg',
-                jpg2x: '/previews/life-sciences-mobile@2x.jpg',
-                webp: '/previews/life-sciences-mobile.webp',
-                webp2x: '/previews/life-sciences-mobile@2x.webp',
-            },
-        },
-        conference: {
-            desktop: { jpg: '/previews/conference-platform-desktop.jpg', webp: '/previews/conference-platform-desktop.webp' },
-            mobile: { jpg: '/previews/conference-platform-mobile.jpg', webp: '/previews/conference-platform-mobile.webp' },
-        },
-        setpoint: { desktop: { jpg: '/previews/setpoint-desktop.jpg', webp: '/previews/setpoint-desktop.webp' }, mobile: { jpg: '/previews/setpoint-mobile.jpg', webp: '/previews/setpoint-mobile.webp' } },
-        'ai-governance': { desktop: { jpg: '/previews/ai-governance-desktop.jpg', webp: '/previews/ai-governance-desktop.webp' }, mobile: { jpg: '/previews/ai-governance-mobile.jpg', webp: '/previews/ai-governance-mobile.webp' } },
-        zano: { desktop: { jpg: '/previews/zano-live-homepage.png', webp: '/previews/zano-live-homepage.webp' }, mobile: { jpg: '/previews/zano-live-homepage-mobile.png', webp: '/previews/zano-live-homepage-mobile.webp' } },
+        'life-sciences': '/previews/intelli-photo.png',
+        conference: '/previews/event-data.png',
+        setpoint: '/previews/setpoint-desktop.png',
+        'ai-governance': '/previews/ai-governance-desktop.svg',
+        zano: '/previews/zano-live-homepage.png',
     };
 
-    const src = mapping[type] || mapping.zano;
-
-    // Fallback: if no jpg/webp defined, fall back to svg or png
-    const desktopJpg = (src.desktop && src.desktop.jpg) || (src.desktop && src.desktop.png) || src.desktop?.svg;
-
+    const src = mapping[type] || mapping['zao'] || '/previews/zano-live-homepage.png';
+    const imageClassName = `selected-card__img${type === 'life-sciences' ? ' selected-card__img--contain' : ''}`;
     return (
-        <picture>
-            {/* mobile first */}
-            {src.mobile && src.mobile.webp && (
-                <source media="(max-width: 720px)" type="image/webp" srcSet={`${src.mobile.webp} 1x${src.mobile.webp2x ? `, ${src.mobile.webp2x} 2x` : ''}`} />
-            )}
-            {src.mobile && src.mobile.jpg && (
-                <source media="(max-width: 720px)" type="image/jpeg" srcSet={`${src.mobile.jpg} 1x${src.mobile.jpg2x ? `, ${src.mobile.jpg2x} 2x` : ''}`} />
-            )}
-
-            {src.desktop && src.desktop.webp && (
-                <source type="image/webp" srcSet={`${src.desktop.webp} 1x${src.desktop.webp2x ? `, ${src.desktop.webp2x} 2x` : ''}`} />
-            )}
-            {src.desktop && src.desktop.jpg && (
-                <source type="image/jpeg" srcSet={`${src.desktop.jpg} 1x${src.desktop.jpg2x ? `, ${src.desktop.jpg2x} 2x` : ''}`} />
-            )}
-
-            {/* final fallback to svg/png if present */}
-            <img className="selected-card__img" src={desktopJpg || src.desktop?.jpg || src.desktop?.svg || '/previews/zano-live-homepage.png'} alt={`${title} screenshot`} loading="lazy" />
-        </picture>
+        <img className={imageClassName} src={src} alt={`${title} screenshot`} loading="lazy" />
     );
 }
 

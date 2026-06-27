@@ -10,9 +10,7 @@
       "problem": "Researchers needed a unified interface to find, correlate and annotate diverse datasets quickly.",
       "solution": "Built a product-focused workspace with curated data views, inline annotations and AI-assisted insight suggestions to accelerate discovery.",
       "screenshot": "/previews/life-sciences-desktop.jpg",
-      "mobileScreenshot": "/previews/life-sciences-mobile.jpg",
-      "screenshotWebp": "/previews/life-sciences-desktop.webp",
-      "mobileScreenshotWebp": "/previews/life-sciences-mobile.webp"
+      "mobileScreenshot": "/previews/life-sciences-mobile.jpg"
     },
     {
       "id": "conference-platform",
