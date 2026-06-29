@@ -2,43 +2,45 @@
 
 .capabilities-section {
   background: transparent;
+  /* Margen superior para empujar la sección hacia abajo y dejar espacio */
+  margin-top: clamp(60px, 8vw, 100px) !important; 
   padding: var(--space-7) var(--space-3);
+  position: relative;
+  z-index: 1;
 
   .capabilities-inner {
     /* rely on the global .container for max-width, margins and horizontal padding */
+    display: block;
+    clear: both;
   }
 
-  .capabilities-header {
+ .capabilities-header {
     margin-bottom: var(--space-5);
+    display: block;
+    
     .kicker {
-      color: var(--text-muted);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 8px;
-      text-transform: none;
-    }
-    .capabilities-title {
-      font-family: var(--font-serif);
-      font-size: var(--fs-h3);
-      line-height: 1.15;
-      margin: 0 0 var(--space-4) 0;
-      color: var(--text-strong);
-      max-width: 820px;
-      letter-spacing: -0.01em;
-    }
+      /* Estilos idénticos a EXPERIENCE */
+      color: #3b2fb3; /* El color azul/morado de Experience, cámbialo por var(--accent) si usas variable */
+      font-size: clamp(1.4rem, 1vw, 1rem); /* Mismo tamaño responsivo */
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      line-height: 1;
+      text-transform: uppercase; /* Forzado a mayúsculas */
+      margin-bottom: 14px;
+      display: inline-flex;
+      align-items: center;
 
-    .capabilities-intro {
-      margin: 0 0 var(--space-6) 0;
-      color: var(--text-muted);
-      font-size: var(--fs-md);
-      max-width: 820px;
-    }
-  }
+      /* Eliminamos por completo el punto azul o pseudo-elemento que tuviera */
+      &::before {
+        content: none !important;
+      }
+    }}
   
 
   .capabilities-panel {
     display: block;
     gap: 28px;
+    clear: both;
 
     .capabilities-tabs-bar {
       margin-bottom: 18px;
@@ -206,6 +208,7 @@
 /* Mobile-specific compaction for Capabilities section (<=767px) */
 @media (max-width: 767px) {
   .capabilities-section {
+    margin-top: 30px !important; /* Espaciado controlado en móvil */
     padding: var(--space-4) var(--space-2);
 
     .capabilities-header {
@@ -268,7 +271,7 @@
 /* Desktop: keep wider but not fully edge-to-edge — center content with larger max-width */
 @media (min-width: 1024px) {
   .capabilities-section {
-    /* expand more on desktop while keeping subtle gutters */
+    margin-top: 80px !important; /* Más separación en pantallas grandes */
     padding-left: var(--space-2);
     padding-right: var(--space-2);
 

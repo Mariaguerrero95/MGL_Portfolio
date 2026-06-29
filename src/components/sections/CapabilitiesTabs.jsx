@@ -107,8 +107,14 @@ export default function CapabilitiesTabs() {
     }, [active, tabListRef]);
 
     return (
-        <section className="capabilities-section" aria-labelledby="capabilities-heading" data-reduce-motion={reduceMotion}>
-            <div className="capabilities-inner container">
+    <section 
+        className="capabilities-section" 
+        aria-labelledby="capabilities-heading" 
+        data-reduce-motion={reduceMotion}
+        /* Subido a 50px para generar un espacio elegante arriba de la sección */
+        style={{ paddingTop: '150px', display: 'block', clear: 'both' }}
+    >
+        <div className="capabilities-inner container">
                 <div className="capabilities-header">
                     <p className="kicker">Capabilities</p>
                     <p className="capabilities-intro">Building great products requires more than writing code. 

@@ -179,9 +179,7 @@ export default function ZanoSelectedWork() {
         <section className="section zano-selected-work" id="work" aria-labelledby="selected-work-title">
             <div className="container">
                 <div className="zano-selected-work__head">
-                    <div className="kicker">FEATURED PROJECTS</div>
-                    <h2 id="selected-work-title">Selected Work</h2>
-                    <p>A curated selection of product, frontend, backend and design work developed through real-world projects.</p>
+                    <h2 id="selected-work-title">Latest projects I have worked on at Zano</h2>
                 </div>
 
                 <div className="zano-selected-work__grid">

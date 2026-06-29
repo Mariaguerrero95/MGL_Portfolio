@@ -1,7 +1,10 @@
-// Impact at Zano section styles
+/* Impact at Zano section styles */
 
 .impact-at-zano {
-  padding: 48px 0 32px;
+  /* Forzado a cero y margen negativo agresivo para jalar lo de abajo */
+  padding-top: 30px;
+  padding-bottom: 0px !important;
+  margin-bottom: -60px !important; 
 
   .impact-at-zano__top {
     display: grid;
@@ -11,18 +14,25 @@
   }
 
   .impact-at-zano__intro {
-    .kicker {
-      color: var(--accent);
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .impact-at-zano__kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      font-size: clamp(1.4rem, 1vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      line-height: 1;
+      margin-bottom: 14px;
+
+      &::before {
+        content: none;
+      }
     }
 
-    h2 {
-      font-size: clamp(28px, 4.6vw, 48px);
-      margin: 8px 0 12px;
-      font-weight: 700;
-      line-height: 1.2;
+    .kicker {
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     p {
@@ -121,7 +131,7 @@
   }
 
   .impact-at-zano__skills-card {
-    margin-top: clamp(28px, 5vw, 40px);
+    margin-top: 12px;
     background: var(--surface-card);
     border: 1px solid var(--border-card);
     border-radius: 12px;
@@ -131,7 +141,15 @@
     overflow: hidden;
   }
 
-  /* Reset any explicit positioning from previous media queries (nth-child placements) */
+  &--capabilities {
+    padding: 8px 0 0;
+
+    .impact-at-zano__skills-card {
+      margin-top: 0;
+    }
+  }
+
+  /* Reset any explicit positioning from previous media queries */
   .impact-at-zano .impact-skill {
     grid-column: auto;
     grid-row: auto;
@@ -206,12 +224,11 @@
 
   @media (min-width: 640px) {
     .impact-at-zano__top {
-      grid-template-columns: 1fr 640px;
-      gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
 
     .impact-at-zano__card {
-      grid-column: 2 / 3;
       padding: 28px 28px;
       max-width: 640px;
       width: 100%;
@@ -220,12 +237,11 @@
 
   @media (min-width: 768px) {
     .impact-at-zano__top {
-      grid-template-columns: 1fr 640px;
-      gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
 
     .impact-at-zano__card {
-      grid-column: 2 / 3;
       padding: 28px 28px;
       max-width: 640px;
       width: 100%;
@@ -237,7 +253,9 @@
   }
 
   @media (min-width: 1024px) {
-    padding: 64px 0 48px;
+    padding-top: 40px;
+    padding-bottom: 0px !important;
+    margin-bottom: -80px !important; /* Margen negativo fuerte en desktop */
 
     .impact-at-zano__skills-card {
       grid-template-columns: repeat(5, 1fr);
@@ -263,12 +281,13 @@
       gap: 8px;
     }
 
-    /* Ensure the mobile/tablet-only revealed panel doesn't appear on desktop */
     .impact-at-zano__skill-panel { display: none; }
   }
 
   @media (min-width: 1200px) {
-    padding: 72px 0 56px;
+    padding-top: 48px;
+    padding-bottom: 0px !important;
+    margin-bottom: -100px !important; /* Elmina el vacío en pantallas grandes */
 
     .impact-at-zano__skills-card {
       grid-template-columns: repeat(5, 1fr);
@@ -282,10 +301,10 @@
       border-right: none;
     }
   }
-  @media (max-width: 1023px) {
-    /* Mobile / small tablet: grid-auto-columns + horizontal scroll to avoid clipping */
 
-    /* ensure parent wrappers don't clip the horizontal scroller */
+  @media (max-width: 1023px) {
+    margin-bottom: -40px !important; /* Ajuste para tablets */
+
     .impact-at-zano,
     .impact-at-zano .container {
       overflow: visible;
@@ -320,7 +339,6 @@
 
     .impact-skill__content { position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal; border: 0; }
 
-    /* Keep titles visible, hide descriptive paragraph visually */
     .impact-skill__content p { display: none; }
     .impact-skill h4 { display: none; }
 
@@ -328,10 +346,10 @@
     .impact-skill__icon img { width: 28px; height: 28px; }
   }
 
-  /* Mobile-specific: replace horizontal scroller with centered 2/1/2 grid and revealed panel */
   @media (max-width: 767px) {
+    margin-bottom: -30px !important; /* Ajuste para móviles */
+
     .impact-at-zano__skills-card {
-      /* disable horizontal scrolling and use an explicit grid */
       overflow: visible;
       display: grid;
       grid-template-columns: repeat(3, minmax(56px, 96px));
@@ -342,7 +360,6 @@
     }
 
     .impact-skill {
-      /* ensure each button centers itself in its grid cell */
       min-width: 56px;
       padding: 8px 6px;
       display: flex;
@@ -356,7 +373,6 @@
 
     .impact-skill { justify-self: center; }
 
-    /* Position the five items in a 3-column grid to create 2 / 1 / 2 layout */
     .impact-skill:nth-child(1) { grid-column: 1; grid-row: 1; }
     .impact-skill:nth-child(2) { grid-column: 3; grid-row: 1; }
     .impact-skill:nth-child(3) { grid-column: 2; grid-row: 2; }
@@ -374,7 +390,6 @@
 
     .impact-skill__content p { display: none; }
 
-    /* revealed panel styling */
     .impact-at-zano__skill-panel {
       margin-top: 14px;
       background: var(--cream);
@@ -389,7 +404,6 @@
     .impact-at-zano__skill-panel p { margin: 0; color: var(--text-muted); line-height: 1.5; }
   }
 
-  /* Tablet: apply same compact selector as mobile (disable horizontal scroll, hide titles) */
   @media (min-width: 768px) and (max-width: 1023px) {
     .impact-at-zano__skills-card {
       overflow: visible;
@@ -447,7 +461,6 @@
     .impact-at-zano__skill-panel p { margin: 0; color: var(--text-muted); line-height: 1.5; }
   }
 
-  /* Very small screens: keep grid layout, hide titles and avoid horizontal scroll */
   @media (max-width: 480px) {
     .impact-at-zano__skills-card {
       display: grid;
@@ -480,15 +493,11 @@
 
     .impact-skill__icon img { width: 24px; height: 24px; }
 
-    /* Hide titles on very small screens and keep descriptions hidden */
     .impact-skill h4 { display: none; }
     .impact-skill__content p { display: none; }
   }
 }
 
-/* Override final: forzar una única fila de iconos y reducir su tamaño en tablet y mobile
-   Esta regla usa selectores finales para anular las reglas previas que colocan
-   los elementos con nth-child. */
 @media (max-width: 1023px) {
   .impact-at-zano .impact-at-zano__skills-card {
     display: flex;
@@ -521,7 +530,6 @@
     grid-row: auto;
   }
 
-  /* Iconos más pequeños */
   .impact-at-zano .impact-skill__icon {
     width: 48px;
     height: 48px;
@@ -534,14 +542,10 @@
     height: 20px;
   }
 
-  /* Mantener textos ocultos si las reglas previas lo hacían */
   .impact-at-zano .impact-skill h4,
   .impact-at-zano .impact-skill__content p { display: none; }
 }
 
-/* Responsive final: distribuir los iconos en una fila que se ajuste al ancho
-   de la pantalla. Usa flex y flex:1 para que los items se repartan el espacio.
-   `clamp()` mantiene tamaños relativos en cada breakpoint. Placed last to win. */
 @media (max-width: 1023px) {
   .impact-at-zano .impact-at-zano__skills-card {
     display: flex;
@@ -556,7 +560,6 @@
 
   .impact-at-zano .impact-at-zano__skills-card::-webkit-scrollbar { display: none; }
 
-  /* Cada skill ocupa espacio proporcional y se adapta al ancho */
   .impact-at-zano .impact-skill {
     flex: 1 1 0;
     max-width: none;
@@ -573,7 +576,6 @@
     grid-row: auto;
   }
 
-  /* Iconos responsivos que se adaptan al ancho del dispositivo */
   .impact-at-zano .impact-skill__icon {
     width: clamp(32px, 8vw, 56px);
     height: clamp(32px, 8vw, 56px);
@@ -586,12 +588,10 @@
     height: clamp(14px, 4vw, 28px);
   }
 
-  /* Ocultar texto si quieres solo iconos en la fila */
   .impact-at-zano .impact-skill h4,
   .impact-at-zano .impact-skill__content p { display: none; }
 }
 
-/* Mobile-specific smaller icon sizes to override the general mobile/tablet override */
 @media (max-width: 767px) {
   .impact-at-zano .impact-skill__icon {
     width: 40px;
